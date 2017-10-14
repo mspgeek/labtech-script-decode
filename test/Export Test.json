@@ -1,0 +1,114 @@
+[
+  {
+    "Action": "InitialCheck",
+    "FunctionId": "1",
+    "Param1": "",
+    "Param2": "",
+    "Param3": "",
+    "Param4": "",
+    "Param5": "",
+    "Sort": "0",
+    "Continue": "Exit on failure",
+    "OsLimit": "All Operating Systems",
+    "Indentation": "0",
+    "Function": {
+      "FunctionId": 1,
+      "Name": "True",
+      "Parameters": 0,
+      "FunctionType": "If",
+      "ParamNames": [],
+      "Description": "Always runs the Then part of the Script.",
+      "FunctionFlag": "Global"
+    },
+    "Params": []
+  },
+  {
+    "Action": "ThenSection",
+    "FunctionId": "20",
+    "Param1": "13",
+    "Param2": "set properties",
+    "Param3": "variableName",
+    "Param4": "",
+    "Param5": "",
+    "Sort": "0",
+    "Continue": "Continue on failure",
+    "OsLimit": "Windows 8 Class (2012 or 8)",
+    "Indentation": "0",
+    "Function": {
+      "FunctionId": 20,
+      "Name": "Variable Set",
+      "Parameters": 3,
+      "FunctionType": "Function",
+      "ParamNames": [
+        {
+          "ParamName": "Set Type",
+          "Values": [
+            "Registry",
+            "Constant",
+            "Current ComputerID",
+            "Current ClientID",
+            "Current LocationID",
+            "Current Console Number",
+            "Temp Directory",
+            "File Contents",
+            "File Date",
+            "File Version",
+            "File Size",
+            "SQL Query",
+            "All Local Variables",
+            "Properties",
+            "Reload Computer Variables",
+            "Split NameValue Parameter",
+            "Get Virus Scanner Variables",
+            "Expand on Agent",
+            "File MD5 Hash"
+          ],
+          "Description": "What type of value to use, some require parameters",
+          "Value": "13"
+        },
+        {
+          "Description": "Enter required parameters",
+          "ParamName": "Parameter",
+          "Value": "set properties"
+        },
+        {
+          "Description": "Name of variable to set, use @variablename@ in future parameters. ",
+          "ParamName": "Variable Name",
+          "Value": "variableName"
+        }
+      ],
+      "Description": "Set a script variable.",
+      "FunctionFlag": "Global"
+    },
+    "Params": []
+  },
+  {
+    "Action": "ThenSection",
+    "FunctionId": "139",
+    "Param1": "This is a script note in the Export Test file.",
+    "Param2": "",
+    "Param3": "",
+    "Param4": "",
+    "Param5": "",
+    "Sort": "1",
+    "Continue": "Exit on failure",
+    "OsLimit": "All Operating Systems",
+    "Indentation": "0",
+    "Function": {
+      "FunctionId": 139,
+      "Name": "Script Note",
+      "Parameters": 1,
+      "FunctionType": "Function",
+      "ParamNames": [
+        {
+          "Description": "Remark to be added to script, use : at start to specify a label.",
+          "ParamName": "Remark",
+          "Value": "This is a script note in the Export Test file."
+        }
+      ],
+      "Description": "Adds a remark to the script and will not be executed.",
+      "FunctionFlag": "Global"
+    },
+    "Params": []
+  }
+]

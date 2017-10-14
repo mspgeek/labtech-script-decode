@@ -1,0 +1,24 @@
+{
+  "name": "labtech-script-decode",
+  "description": "Utilites to decode LabTech scripts and encodings.",
+  "keywords": [
+    "LabTech",
+    "ConnectWise Automate"
+  ],
+  "author": {
+    "name": "Kevin Grube",
+    "url": "https://github.com/k-grube"
+  },
+  "repository": "https://github.com/k-grube/labtech-script-decode.git",
+  "homepage": "https://github.com/k-grube/labtech-script-decode",
+  "bugs": {
+    "url": "https://github.com/k-grube/labtech-script-decode/issues"
+  },
+  "license": "MIT",
+  "version": "0.1.0",
+  "scripts": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}
