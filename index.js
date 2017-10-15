@@ -26,19 +26,8 @@
  */
 
 /**
- * @typedef {object} ScriptDataXML
- * @property {Array<ScriptStepXML>} ScriptSteps
- * @property Scripts
- * @property Scripts.ExtraDataFields
- * @property Scripts.Globals
- * @property Scripts.Parameters
- * @property Scripts.ScriptGuid
- * @property Scripts.ScriptVersion
- */
-
-/**
  * @typedef {object} ScriptData
- * @property {Array<ScriptStep>} ScriptSteps
+ * @property {Array<ScriptStep|ScriptStepXML>} ScriptSteps
  * @property Scripts
  * @property Scripts.ExtraDataFields
  * @property Scripts.Globals
@@ -97,7 +86,7 @@
  */
 
 /**
- * @typedef {object} ScriptTableXML
+ * @typedef {object} ScriptTable
  * @property ComputerScript
  * @property EditPermission
  * @property FolderId
@@ -115,7 +104,6 @@
  * @property ScriptNotes
  * @property ScriptVersion
  */
-
 
 /**
  * @typedef {object} ScriptTable
@@ -148,32 +136,8 @@
 const script = require('./lib/script');
 const constants = require('./lib/constants');
 
-/**
- * @type {Constants}
- */
 exports.constants = constants;
-
-/**
- * @type {decode}
- */
 exports.decode = script.decode;
-
-/**
- * @type {decodeFile}
- */
 exports.decodeFile = script.decodeFile;
-
-/**
- * @type {decodeXML}
- */
 exports.decodeXML = script.decodeXML;
-
-/**
- * @type {interpolateScriptData}
- */
 exports.interpolate = script.interpolateScriptData;
-
-/**
- * @type {loadDecodeParseInterpolate}
- */
-exports.loadFile = script.loadFile;

@@ -17,8 +17,10 @@
   "license": "MIT",
   "version": "0.1.0",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "xml2js": "^0.4.19"
+  },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=6.0.0"
   }
 }
