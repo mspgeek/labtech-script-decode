@@ -3,21 +3,31 @@
  */
 
 /**
- * @typedef {object} LabTechScript
+ * @typedef {Object} LabTechScript
  * @property LabTech_Expansion
  * @property LabTech_Expansion.$
  * @property LabTech_Expansion.$.Name
  * @property LabTech_Expansion.$.Type
  * @property LabTech_Expansion.$.Version
- * @property LabTech_Expansion.PackedScript
- * @property LabTech_Expansion.PackedScript.NewDataSet
- * @property {ScriptTable} LabTech_Expansion.PackedScript.NewDataSet.Table
- * @property LabTech_Expansion.PackedScript.ScriptFolder
- * @property {FolderTable} LabTech_Expansion.PackedScript.ScriptFolder.Table
+ * @property {PackedScript} LabTech_Expansion.PackedScript
  */
 
 /**
- * @typedef {object} LicenseData
+ * @typedef {Array<Object>|Object} PackedScript
+ * @property {Object} NewDataSet
+ * @property {ScriptTable} NewDataSet.Table
+ * @property {Array<PackedScript>|PackedScript} PackedScript
+ * @property {ScriptFolder} ScriptFolder
+ */
+
+/**
+ * @typedef {Array<Object>} ScriptFolder
+ * @property NewDataSet
+ * @property {FolderTable} NewDataSet.Table
+ */
+
+/**
+ * @typedef {Object} LicenseData
  * @property ExpireDate
  * @property RunCounter
  * @property ScriptGuid
@@ -26,9 +36,9 @@
  */
 
 /**
- * @typedef {object} ScriptData
+ * @typedef {Object} ScriptData
  * @property {Array<ScriptStep|ScriptStepXML>} ScriptSteps
- * @property Scripts
+ * @property {Object} Scripts
  * @property Scripts.ExtraDataFields
  * @property Scripts.Globals
  * @property Scripts.Parameters
@@ -37,7 +47,7 @@
  */
 
 /**
- * @typedef {object} ScriptStepXML
+ * @typedef {Object} ScriptStepXML
  * @property Action
  * @property Continue
  * @property FunctionId
@@ -52,7 +62,7 @@
  */
 
 /**
- * @typedef {object} ScriptStep
+ * @typedef {Object} ScriptStep
  * @property Action
  * @property Continue
  * @property {ScriptFunction} Function
@@ -68,7 +78,7 @@
  */
 
 /**
- * @typedef {object} ScriptFunction
+ * @typedef {Object} ScriptFunction
  * @property Description
  * @property FunctionFlag
  * @property FunctionId
@@ -78,7 +88,7 @@
  */
 
 /**
- * @typedef {object} ScriptParam
+ * @typedef {Object} ScriptParam
  * @property Description
  * @property ParamName
  * @property Value
@@ -86,7 +96,7 @@
  */
 
 /**
- * @typedef {object} ScriptTable
+ * @typedef {Object} ScriptTable
  * @property ComputerScript
  * @property EditPermission
  * @property FolderId
@@ -106,27 +116,7 @@
  */
 
 /**
- * @typedef {object} ScriptTable
- * @property ComputerScript
- * @property EditPermission
- * @property FolderId
- * @property FunctionScript
- * @property {LicenseData} LicenseData
- * @property LocationScript
- * @property MaintenanceScript
- * @property Parameters
- * @property Permission
- * @property {ScriptData} ScriptData
- * @property ScriptFlags
- * @property ScriptGuid
- * @property ScriptId
- * @property ScriptName
- * @property ScriptNotes
- * @property ScriptVersion
- */
-
-/**
- * @typedef {object} FolderTable
+ * @typedef {Object} FolderTable
  * @property FolderID
  * @property GUID
  * @property Name

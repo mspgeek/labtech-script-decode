@@ -15,9 +15,10 @@
     "url": "https://github.com/k-grube/labtech-script-decode/issues"
   },
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "scripts": {},
   "dependencies": {
+    "lodash": "^4.17.4",
     "xml2js": "^0.4.19"
   },
   "engines": {
