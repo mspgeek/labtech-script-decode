@@ -130,3 +130,6 @@ exports.constants = constants;
 exports.decode = script.decode;
 exports.decodeXML = script.decodeXML;
 exports.interpolate = script.interpolateScriptData;
+exports.encode = script.encode;
+exports.encodeXML = script.encodeXML;
+
