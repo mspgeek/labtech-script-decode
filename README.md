@@ -1,6 +1,7 @@
 ## labtech-script-decode
 
-A set of utilities to load, parse and interpolate exported LabTech scripts from XML into JSON.
+A set of utilities to load, parse, encode and interpolate exported LabTech scripts from XML into JSON and from JSON to XML.   This module will run in the browser or on the server.   
+ 
 
 ## Installation
 
@@ -10,17 +11,24 @@ npm install --save labtech-script-decode
 
 ## Usage
 
+### Server
 ```javascript
-const decode = require('labtech-script-decode');
+const labtech_script = require('labtech-script-decode');
 
-decode.decodeFile('filename.xml')
-  .then(result => {
-    // other function
-  });
+labtech_script.decodeXML(scriptXML).then(scriptJSON => {})
 
-decode.decodeXML(scriptXML).then()
+labtech_script.decode(base64string).then()
+```
 
-decode.decode(base64string).then()
+### Browser
+
+Include using Webpack, Browserify, etc, or directly using a script tag:
+
+```html
+<script src="/dist/labtech-script-decode.min.js"></script>
+<script>
+  labtech_script.decodeXML(scriptXML).then(scriptJSON => {})
+</script>
 ```
 
 
@@ -46,21 +54,6 @@ Decode and interpolate an XML string
 
 Promise ⇒ Object\<LabTechScript\>
 
-### decodeFile(file)
-
-Helper to load and parse an exported file.
-
-**Arguments**
-
-| Param | Type | Description |
-| --- | --- | --- |
-| file | String | Filename |
-
-**Returns**
-
-Promise ⇒ Object\<LabTechScript\>
-
-
 ### decode(value)
 
 Decode and parse a base 64 encoded string such as ScriptData or LicenseData.  This function does not interpolate constants such as function names into decoded values.
@@ -74,6 +67,35 @@ Decode and parse a base 64 encoded string such as ScriptData or LicenseData.  Th
 **Returns**
 
 Promise ⇒ Object\<Parsed XML\>
+
+
+### encodeXML(object)
+
+Encode and de-interpolate object into an XML string.  The input's schema is validated to confirm that the output will produce a valid LabTech script. 
+
+**Arguments**
+
+| Param | Type | Description |
+| --- | --- | --- |
+| object | Object<LabTech_Expansion> | Packed LabTech script |
+
+**Returns**
+
+Promise ⇒ String\<XML\>
+
+### encode(object)
+
+Encode a JSON object into a base64 encoded string such as for ScriptData or LicenseData. 
+
+**Arguments**
+
+| Param | Type | Description |
+| --- | --- | --- |
+| object | object | |
+
+**Returns**
+
+Promise ⇒ String<Base64 Encoded>
 
 ### interpolate(scriptData)
 
@@ -134,176 +156,175 @@ A helper object containing a map of ids to
 <a name="LabTechScript"></a>
 
 ### LabTechScript : <code>Object</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name | Type |
 | --- | --- |
-| LabTech_Expansion |  | 
-| LabTech_Expansion.$ |  | 
-| LabTech_Expansion.$.Name |  | 
-| LabTech_Expansion.$.Type |  | 
-| LabTech_Expansion.$.Version |  | 
-| LabTech_Expansion.PackedScript | [<code>PackedScript</code>](#PackedScript) | 
+| LabTech_Expansion |  |
+| LabTech_Expansion.$ |  |
+| LabTech_Expansion.$.Name |  |
+| LabTech_Expansion.$.Type |  |
+| LabTech_Expansion.$.Version |  |
+| LabTech_Expansion.PackedScript | [<code>PackedScript</code>](#PackedScript) |
 
 <a name="PackedScript"></a>
 
 ### PackedScript : <code>Array.&lt;Object&gt;</code> \| <code>Object</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name | Type |
 | --- | --- |
-| NewDataSet | <code>Object</code> | 
-| NewDataSet.Table | [<code>ScriptTable</code>](#ScriptTable) | 
-| PackedScript | [<code>Array.&lt;PackedScript&gt;</code>](#PackedScript) \| [<code>PackedScript</code>](#PackedScript) | 
-| ScriptFolder | [<code>ScriptFolder</code>](#ScriptFolder) | 
+| NewDataSet | <code>Object</code> |
+| NewDataSet.Table | [<code>ScriptTable</code>](#ScriptTable) |
+| PackedScript | [<code>Array.&lt;PackedScript&gt;</code>](#PackedScript) \| [<code>PackedScript</code>](#PackedScript) |
+| ScriptFolder | [<code>ScriptFolder</code>](#ScriptFolder) |
 
 <a name="ScriptFolder"></a>
 
 ### ScriptFolder : <code>Array.&lt;Object&gt;</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name | Type |
 | --- | --- |
-| NewDataSet |  | 
-| NewDataSet.Table | [<code>FolderTable</code>](#FolderTable) | 
+| NewDataSet |  |
+| NewDataSet.Table | [<code>FolderTable</code>](#FolderTable) |
 
 <a name="LicenseData"></a>
 
 ### LicenseData : <code>Object</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name |
 | --- |
-| ExpireDate | 
-| RunCounter | 
-| ScriptGuid | 
-| ScriptVersion | 
-| Type | 
+| ExpireDate |
+| RunCounter |
+| ScriptGuid |
+| ScriptVersion |
+| Type |
 
 <a name="ScriptData"></a>
 
 ### ScriptData : <code>Object</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name | Type |
 | --- | --- |
-| ScriptSteps | <code>Array.&lt;(ScriptStep\|ScriptStepXML)&gt;</code> | 
-| Scripts | <code>Object</code> | 
-| Scripts.ExtraDataFields |  | 
-| Scripts.Globals |  | 
-| Scripts.Parameters |  | 
-| Scripts.ScriptGuid |  | 
-| Scripts.ScriptVersion |  | 
+| ScriptSteps | <code>Array.&lt;(ScriptStep\|ScriptStepXML)&gt;</code> |
+| Scripts | <code>Object</code> |
+| Scripts.ExtraDataFields |  |
+| Scripts.Globals |  |
+| Scripts.Parameters |  |
+| Scripts.ScriptGuid |  |
+| Scripts.ScriptVersion |  |
 
 <a name="ScriptStepXML"></a>
 
 ### ScriptStepXML : <code>Object</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name |
 | --- |
-| Action | 
-| Continue | 
-| FunctionId | 
-| Indentation | 
-| OsLimit | 
-| Param1 | 
-| Param2 | 
-| Param3 | 
-| Param4 | 
-| Param5 | 
-| Sort | 
+| Action |
+| Continue |
+| FunctionId |
+| Indentation |
+| OsLimit |
+| Param1 |
+| Param2 |
+| Param3 |
+| Param4 |
+| Param5 |
+| Sort |
 
 <a name="ScriptStep"></a>
 
 ### ScriptStep : <code>Object</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name | Type |
 | --- | --- |
-| Action |  | 
-| Continue |  | 
-| Function | [<code>ScriptFunction</code>](#ScriptFunction) | 
-| FunctionId |  | 
-| Indentation |  | 
-| OsLimit |  | 
-| Param1 |  | 
-| Param2 |  | 
-| Param3 |  | 
-| Param4 |  | 
-| Param5 |  | 
-| Sort |  | 
+| Action |  |
+| Continue |  |
+| Function | [<code>ScriptFunction</code>](#ScriptFunction) |
+| FunctionId |  |
+| Indentation |  |
+| OsLimit |  |
+| Param1 |  |
+| Param2 |  |
+| Param3 |  |
+| Param4 |  |
+| Param5 |  |
+| Sort |  |
 
 <a name="ScriptFunction"></a>
 
 ### ScriptFunction : <code>Object</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name | Type |
 | --- | --- |
-| Description |  | 
-| FunctionFlag |  | 
-| FunctionId |  | 
-| FunctionType |  | 
-| Name |  | 
-| ParamNames | [<code>Array.&lt;ScriptParam&gt;</code>](#ScriptParam) | 
+| Description |  |
+| FunctionFlag |  |
+| FunctionId |  |
+| FunctionType |  |
+| Name |  |
+| ParamNames | [<code>Array.&lt;ScriptParam&gt;</code>](#ScriptParam) |
 
 <a name="ScriptParam"></a>
 
 ### ScriptParam : <code>Object</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name | Type |
 | --- | --- |
-| Description |  | 
-| ParamName |  | 
-| Value |  | 
-| Values | <code>Array.&lt;String&gt;</code> | 
+| Description |  |
+| ParamName |  |
+| Value |  |
+| Values | <code>Array.&lt;String&gt;</code> |
 
 <a name="ScriptTable"></a>
 
 ### ScriptTable : <code>Object</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name | Type |
 | --- | --- |
-| ComputerScript |  | 
-| EditPermission |  | 
-| FolderId |  | 
-| FunctionScript |  | 
-| LicenseData |  | 
-| LocationScript |  | 
-| MaintenanceScript |  | 
-| Parameters |  | 
-| Permission |  | 
-| ScriptData | [<code>ScriptData</code>](#ScriptData) | 
-| ScriptFlags |  | 
-| ScriptGuid |  | 
-| ScriptId |  | 
-| ScriptName |  | 
-| ScriptNotes |  | 
-| ScriptVersion |  | 
+| ComputerScript |  |
+| EditPermission |  |
+| FolderId |  |
+| FunctionScript |  |
+| LicenseData |  |
+| LocationScript |  |
+| MaintenanceScript |  |
+| Parameters |  |
+| Permission |  |
+| ScriptData | [<code>ScriptData</code>](#ScriptData) |
+| ScriptFlags |  |
+| ScriptGuid |  |
+| ScriptId |  |
+| ScriptName |  |
+| ScriptNotes |  |
+| ScriptVersion |  |
 
 <a name="FolderTable"></a>
 
 ### FolderTable : <code>Object</code>
-**Kind**: global typedef  
+**Kind**: global typedef
 **Properties**
 
 | Name |
 | --- |
-| FolderID | 
-| GUID | 
-| Name | 
-| ParentID | 
-
+| FolderID |
+| GUID |
+| Name |
+| ParentID |

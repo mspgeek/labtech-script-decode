@@ -25,12 +25,23 @@
   "main": "dist/labtech-script-decode.min.js",
   "module": "dist/labtech-script-decode.module.min.js",
   "license": "MIT",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {
+    "ajv": "^6.1.1",
+    "buffer": "^5.0.8",
     "lodash": "^4.17.4",
+    "pako": "^1.0.6",
     "xml2js": "^0.4.19"
   },
   "engines": {
     "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
   }
 }
