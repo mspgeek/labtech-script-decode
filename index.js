@@ -128,6 +128,5 @@ const constants = require('./lib/constants');
 
 exports.constants = constants;
 exports.decode = script.decode;
-exports.decodeFile = script.decodeFile;
 exports.decodeXML = script.decodeXML;
 exports.interpolate = script.interpolateScriptData;
