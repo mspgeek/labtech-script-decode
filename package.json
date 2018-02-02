@@ -14,9 +14,18 @@
   "bugs": {
     "url": "https://github.com/k-grube/labtech-script-decode/issues"
   },
+  "scripts": {
+    "build": "webpack --config webpack.dist.js",
+    "build-dev": "webpack --config webpack.dev.js",
+    "build-module": "webpack --config webpack.module.js",
+    "build-module-dev": "webpack --config webpack.module-dev.js",
+    "build-dist": "npm run build & npm run build-module",
+    "build-all": "npm run build & npm run build-dev & npm run build-module & npm run build-module-dev"
+  },
+  "main": "dist/labtech-script-decode.min.js",
+  "module": "dist/labtech-script-decode.module.min.js",
   "license": "MIT",
   "version": "0.2.0",
-  "scripts": {},
   "dependencies": {
     "lodash": "^4.17.4",
     "xml2js": "^0.4.19"
