@@ -1,44 +1,53 @@
 {
-  "LabTech_Expansion": {
-    "$": {
-      "Version": "110.374",
-      "Name": "LabTech Script Expansion",
-      "Type": "PackedScript"
-    },
-    "PackedScript": {
-      "NewDataSet": {
-        "Table": {
-          "ScriptId": "6401",
-          "FolderId": "202",
-          "ScriptName": "Export Test",
-          "ScriptNotes": "",
-          "Permission": "0,",
-          "EditPermission": "0,",
-          "ComputerScript": "1",
-          "LocationScript": "0",
-          "MaintenanceScript": "0",
-          "FunctionScript": "0",
-          "LicenseData": {
-            "Type": "1",
-            "RunCounter": "0",
-            "ExpireDate": "Monday, October 16, 2017 4:19:50 PM",
-            "ScriptVersion": "0",
+  "$": {
+    "Version": "110.374",
+    "Name": "LabTech Script Expansion",
+    "Type": "PackedScript"
+  },
+  "PackedScript": {
+    "NewDataSet": {
+      "Table": {
+        "ScriptId": 6401,
+        "FolderId": 202,
+        "ScriptName": "Export Test",
+        "ScriptNotes": "",
+        "Permission": "0,",
+        "EditPermission": "0,",
+        "ComputerScript": 1,
+        "LocationScript": 0,
+        "MaintenanceScript": 0,
+        "FunctionScript": 0,
+        "LicenseData": {
+          "Type": 1,
+          "RunCounter": 0,
+          "ExpireDate": "Monday, October 16, 2017 4:19:50 PM",
+          "ScriptVersion": 0,
+          "ScriptGuid": "88dfaf30-aea8-11e7-aeca-005056a37e1b"
+        },
+        "ScriptData": {
+          "Scripts": {
+            "ExtraDataFields": "",
+            "Parameters": "",
+            "Globals": "",
+            "ScriptVersion": 1,
             "ScriptGuid": "88dfaf30-aea8-11e7-aeca-005056a37e1b"
           },
-          "ScriptData": [
+          "ScriptSteps": [
             {
-              "Action": "InitialCheck",
-              "FunctionId": "1",
+              "Action": 1,
+              "FunctionId": 1,
               "Param1": "",
               "Param2": "",
               "Param3": "",
               "Param4": "",
               "Param5": "",
-              "Sort": "0",
-              "Continue": "Exit on failure",
-              "OsLimit": "All Operating Systems",
-              "Indentation": "0",
-              "Function": {
+              "Sort": 0,
+              "Continue": 0,
+              "OsLimit": 0,
+              "Indentation": 0,
+              "ActionObject": "InitialCheck",
+              "ContinueObject": "Exit on failure",
+              "FunctionObject": {
                 "FunctionId": 1,
                 "Name": "True",
                 "Parameters": 0,
@@ -46,21 +55,25 @@
                 "ParamNames": [],
                 "Description": "Always runs the Then part of the Script.",
                 "FunctionFlag": "Global"
-              }
+              },
+              "OsLimitObject": "All Operating Systems",
+              "StepDescription": "If True"
             },
             {
-              "Action": "ThenSection",
-              "FunctionId": "20",
-              "Param1": "13",
+              "Action": 2,
+              "FunctionId": 20,
+              "Param1": 13,
               "Param2": "set properties",
               "Param3": "variableName",
               "Param4": "",
               "Param5": "",
-              "Sort": "0",
-              "Continue": "Continue on failure",
-              "OsLimit": "Windows 8 Class (2012 or 8)",
-              "Indentation": "0",
-              "Function": {
+              "Sort": 0,
+              "Continue": 1,
+              "OsLimit": 21,
+              "Indentation": 0,
+              "ActionObject": "ThenSection",
+              "ContinueObject": "Continue on failure",
+              "FunctionObject": {
                 "FunctionId": 20,
                 "Name": "Variable Set",
                 "Parameters": 3,
@@ -90,7 +103,7 @@
                       "File MD5 Hash"
                     ],
                     "Description": "What type of value to use, some require parameters",
-                    "Value": "13"
+                    "Value": 13
                   },
                   {
                     "Description": "Enter required parameters",
@@ -105,21 +118,25 @@
                 ],
                 "Description": "Set a script variable.",
                 "FunctionFlag": "Global"
-              }
+              },
+              "OsLimitObject": "Windows 8 Class (2012 or 8)",
+              "StepDescription": "SET: @variableName@ = PROPERTY[set properties]"
             },
             {
-              "Action": "ThenSection",
-              "FunctionId": "139",
+              "Action": 2,
+              "FunctionId": 139,
               "Param1": "This is a script note in the Export Test file.",
               "Param2": "",
               "Param3": "",
               "Param4": "",
               "Param5": "",
-              "Sort": "1",
-              "Continue": "Exit on failure",
-              "OsLimit": "All Operating Systems",
-              "Indentation": "0",
-              "Function": {
+              "Sort": 1,
+              "Continue": 0,
+              "OsLimit": 0,
+              "Indentation": 0,
+              "ActionObject": "ThenSection",
+              "ContinueObject": "Exit on failure",
+              "FunctionObject": {
                 "FunctionId": 139,
                 "Name": "Script Note",
                 "Parameters": 1,
@@ -133,25 +150,29 @@
                 ],
                 "Description": "Adds a remark to the script and will not be executed.",
                 "FunctionFlag": "Global"
-              }
+              },
+              "OsLimitObject": "All Operating Systems",
+              "StepDescription": "Note: This is a script note in the Export Test file."
             }
-          ],
-          "ScriptVersion": "1",
-          "ScriptGuid": "88dfaf30-aea8-11e7-aeca-005056a37e1b",
-          "ScriptFlags": "0",
-          "Parameters": ""
-        }
-      },
-      "ScriptFolder": {
+          ]
+        },
+        "ScriptVersion": 1,
+        "ScriptGuid": "88dfaf30-aea8-11e7-aeca-005056a37e1b",
+        "ScriptFlags": 0,
+        "Parameters": ""
+      }
+    },
+    "ScriptFolder": [
+      {
         "NewDataSet": {
           "Table": {
-            "FolderID": "202",
-            "ParentID": "0",
+            "FolderID": 202,
+            "ParentID": 0,
             "Name": "Export Test",
             "GUID": "74529cfa-5979-4fd7-aaf5-706788b3d2ee"
           }
         }
       }
-    }
+    ]
   }
 }
