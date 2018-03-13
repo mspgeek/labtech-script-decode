@@ -27,9 +27,9 @@
   "license": "MIT",
   "version": "0.4.5",
   "dependencies": {
-    "ajv": "^6.1.1",
-    "buffer": "^5.0.8",
-    "lodash": "^4.17.4",
+    "ajv": "^6.2.1",
+    "buffer": "^5.1.0",
+    "lodash": "^4.17.5",
     "pako": "^1.0.6",
     "xml2js": "^0.4.19"
   },
@@ -38,10 +38,10 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
-    "uglifyjs-webpack-plugin": "^1.1.8",
-    "webpack": "^3.10.0",
-    "webpack-merge": "^4.1.1"
+    "uglifyjs-webpack-plugin": "^1.2.3",
+    "webpack": "^3.11.0",
+    "webpack-merge": "^4.1.2"
   }
 }
