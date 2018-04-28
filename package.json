@@ -25,7 +25,7 @@
   "main": "dist/labtech-script-decode.min.js",
   "module": "dist/labtech-script-decode.module.min.js",
   "license": "MIT",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "dependencies": {
     "ajv": "^6.2.1",
     "buffer": "^5.1.0",
