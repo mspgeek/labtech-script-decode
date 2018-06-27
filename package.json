@@ -2,8 +2,7 @@
   "name": "labtech-script-decode",
   "description": "Utilites to decode LabTech scripts and encodings.",
   "keywords": [
-    "LabTech",
-    "ConnectWise Automate"
+    "LabTech", "ConnectWise Automate"
   ],
   "author": {
     "name": "Kevin Grube",
@@ -25,7 +24,7 @@
   "main": "dist/labtech-script-decode.min.js",
   "module": "dist/labtech-script-decode.module.min.js",
   "license": "MIT",
-  "version": "0.4.6",
+  "version": "0.5.0",
   "dependencies": {
     "ajv": "^6.2.1",
     "buffer": "^5.1.0",
