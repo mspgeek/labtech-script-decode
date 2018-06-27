@@ -125,6 +125,7 @@
 
 const script = require('./lib/script');
 const constants = require('./lib/constants');
+const functions = require('./lib/functions');
 
 exports.constants = constants;
 exports.decode = script.decode;
@@ -132,4 +133,6 @@ exports.decodeXML = script.decodeXML;
 exports.interpolate = script.interpolateScriptData;
 exports.encode = script.encode;
 exports.encodeXML = script.encodeXML;
+exports.functionTempaltes = functions.functionTemplates;
+exports.getFunctionLineDescription = functions.getFunctionLineDescription;
 
