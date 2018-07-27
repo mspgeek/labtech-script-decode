@@ -27,7 +27,10 @@ Include using Webpack, Browserify, etc, or directly using a script tag:
 ```html
 <script src="/dist/labtech-script-decode.min.js"></script>
 <script>
-  labtech_script.decodeXML(scriptXML).then(scriptJSON => {})
+  labtech_script.decodeXML(scriptXML)
+    .then(scriptJSON => {
+      // scriptJSON
+    })
 </script>
 ```
 
@@ -109,6 +112,14 @@ Promise ⇒ String<Base64 Encoded>
 
 Promise ⇒ Object\<ScriptData\>
 
+### toText(scriptJSON)
+
+**Arguments**
+
+| Param | Type | Description |
+| --- | --- | --- |
+| scriptJSON | LabTechScript | LabTech Script JSON returned by decodeXML |
+
 
 ### Constants
 
@@ -124,7 +135,6 @@ A helper object containing a map of ids to
 | FunctionTypes | If or regular function|
 | Functions | Function definitions |
 | OsLimits | Function OS limits |
-
 
 ## Schema
 

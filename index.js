@@ -135,4 +135,4 @@ exports.encode = script.encode;
 exports.encodeXML = script.encodeXML;
 exports.functionTempaltes = functions.functionTemplates;
 exports.getFunctionLineDescription = functions.getFunctionLineDescription;
-
+exports.toText = script.toText;
