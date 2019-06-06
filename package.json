@@ -2,7 +2,8 @@
   "name": "labtech-script-decode",
   "description": "Utilites to decode LabTech scripts and encodings.",
   "keywords": [
-    "LabTech", "ConnectWise Automate"
+    "LabTech",
+    "ConnectWise Automate"
   ],
   "author": {
     "name": "Kevin Grube",
@@ -24,11 +25,11 @@
   "main": "dist/labtech-script-decode.min.js",
   "module": "dist/labtech-script-decode.module.min.js",
   "license": "MIT",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "dependencies": {
     "ajv": "^6.2.1",
     "buffer": "^5.1.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "pako": "^1.0.6",
     "xml2js": "^0.4.19"
   },
@@ -36,11 +37,11 @@
     "node": ">=6.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "uglifyjs-webpack-plugin": "^1.2.3",
-    "webpack": "^3.11.0",
+    "webpack": "^3.12.0",
     "webpack-merge": "^4.1.2"
   }
 }
