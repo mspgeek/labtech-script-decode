@@ -34,6 +34,10 @@ Include using Webpack, Browserify, etc, or directly using a script tag:
 </script>
 ```
 
+## Documentation
+
+Script functions and their associated [documentation](https://github.com/k-grube/labtech-script-decode/blob/master/DOC.md) for each script function. 
+
 
 ## Examples
 

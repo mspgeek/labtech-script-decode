@@ -2,8 +2,7 @@
   "name": "labtech-script-decode",
   "description": "Utilites to decode LabTech scripts and encodings.",
   "keywords": [
-    "LabTech",
-    "ConnectWise Automate"
+    "LabTech", "ConnectWise Automate"
   ],
   "author": {
     "name": "Kevin Grube",
@@ -20,7 +19,8 @@
     "build-module": "webpack --config webpack.module.js",
     "build-module-dev": "webpack --config webpack.module-dev.js",
     "build-dist": "npm run build & npm run build-module",
-    "build-all": "npm run build & npm run build-dev & npm run build-module & npm run build-module-dev"
+    "build-all": "npm run build & npm run build-dev & npm run build-module & npm run build-module-dev",
+    "docs": "node docs/generate > DOC.md"
   },
   "main": "dist/labtech-script-decode.min.js",
   "module": "dist/labtech-script-decode.module.min.js",
