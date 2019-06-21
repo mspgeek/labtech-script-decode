@@ -24,7 +24,7 @@ decode.decodeXML(xml)
       functionDescriptions[step.FunctionId].functionDisplays.push(step.StepDescription);
     });
 
-    console.log('# Script Function Docuemtation');
+    console.log('# Script Function Documentation');
 
     Object.keys(functionDescriptions)
       .sort((a, b) => functionDescriptions[a].functionName.localeCompare(functionDescriptions[b].functionName))

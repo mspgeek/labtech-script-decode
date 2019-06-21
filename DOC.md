@@ -1,4 +1,4 @@
-# Script Function Docuemtation
+# Script Function Documentation
 [Add User Accounts](#add-user-accounts)  
 [Bulk Registry Write](#bulk-registry-write)  
 [Console Execute](#console-execute)  
