@@ -4,12 +4,12 @@
 const path = require('path');
 
 module.exports = {
-  entry: './index.js',
+  entry: './lib/index.js',
   output: {
     filename: 'labtech-script-decode.min.js',
     path: path.resolve(__dirname, 'dist'),
     library: 'labtech_script',
-    libraryTarget: "umd",
+    libraryTarget: 'umd',
     umdNamedDefine: true,
   },
   module: {
