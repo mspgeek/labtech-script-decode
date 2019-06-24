@@ -1,0 +1,14 @@
+{
+  "opts": {
+    "template": "./node_modules/tsd-jsdoc/dist",
+    "destination": "lib",
+    "recurse": true,
+    "readme": "README.md"
+  },
+  "sourceType": "module",
+  "source": {
+    "include": [
+      "lib"
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 /**
  * Created by kgrube on 6/11/2019
  */
-const decode = require('../index');
+const decode = require('../lib');
 const fs = require('fs');
 const path = require('path');
 
