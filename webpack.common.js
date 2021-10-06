@@ -8,9 +8,17 @@ module.exports = {
   output: {
     filename: 'labtech-script-decode.min.js',
     path: path.resolve(__dirname, 'dist'),
-    library: 'labtech_script',
-    libraryTarget: 'umd',
+    library: {
+      name: 'labtech_script',
+      type: 'umd',
+    },
     umdNamedDefine: true,
+  },
+  resolve: {
+    fallback: {
+      'stream': require.resolve('stream-browserify'),
+      'timers': require.resolve('timers-browserify'),
+    },
   },
   module: {
     rules: [
@@ -20,7 +28,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['babel-preset-env'],
+            presets: ['@babel/preset-env'],
           },
         },
       },
