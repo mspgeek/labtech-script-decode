@@ -11,7 +11,7 @@ npm install --save labtech-script-decode
 
 ## Requirements
 
-- **Node >= 20.19.0** (breaking change from 0.7.x which supported >= 8, now ESM-first)
+- **Node >= 20.19.0** (breaking change from 0.7.x which supported >= 8, now ESM-first, see 1.0.0 release notes)
 
 ## Build and Test
 
@@ -52,7 +52,7 @@ Use via script tag or bundler:
 
 ## Documentation
 
-See DOC.md for step descriptions of the functions used in the doc fixture. Full function definitions (including 257-259 added in 0.8.0) live in `src/constants.js`. 
+See DOC.md for step descriptions of the functions used in the doc fixture. Full function definitions (including 257-259 added in 1.0.0) live in `src/constants.js`. 
 
 
 ## Examples
@@ -158,7 +158,7 @@ A helper object containing a map of ids to function definitions and related data
 
 ### functionTemplates
 
-Interpolated function templates mapping function IDs to template functions for rendering script steps. Note: the typo alias `functionTempaltes` is exported for backwards compatibility (use `functionTemplates` instead). Available via ESM import, CommonJS require, or UMD global.
+Interpolated function templates mapping function IDs to template functions for rendering script steps. Available via ESM import, CommonJS require, or UMD global.
 
 ## Schema
 

@@ -149,13 +149,11 @@ export {
   encode,
   encodeXML,
   functionTemplates,
-  // typo kept for back-compat, remove in 1.0
-  functionTemplates as functionTempaltes,
   getFunctionLineDescription,
   toText,
 };
 
 export default {
   constants, decode, decodeXML, interpolate: interpolateScriptData, encode, encodeXML,
-  functionTemplates, functionTempaltes: functionTemplates, getFunctionLineDescription, toText,
+  functionTemplates, getFunctionLineDescription, toText,
 };

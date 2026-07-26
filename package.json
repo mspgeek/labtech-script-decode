@@ -30,10 +30,14 @@
       "require": "./dist/labtech-script-decode.cjs"
     }
   },
-  "files": ["dist", "src", "DOC.md"],
+  "files": [
+    "dist",
+    "src",
+    "DOC.md"
+  ],
   "type": "module",
   "license": "MIT",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "dependencies": {
     "ajv": "8.20.0",
     "pako": "2.2.0",

@@ -6121,7 +6121,6 @@ const oe = {
   encode: h,
   encodeXML: Q,
   functionTemplates: r,
-  functionTempaltes: r,
   getFunctionLineDescription: f,
   toText: ae
 };
@@ -6132,7 +6131,6 @@ export {
   oe as default,
   h as encode,
   Q as encodeXML,
-  r as functionTempaltes,
   r as functionTemplates,
   f as getFunctionLineDescription,
   $ as interpolate,
