@@ -52,7 +52,7 @@ Use via script tag or bundler:
 
 ## Documentation
 
-See [DOC.md](https://github.com/k-grube/labtech-script-decode/blob/master/DOC.md) for all script function definitions (IDs 1-259). Version 0.8.0 adds functions: 257 (Script Resume State), 258 (Script Label), 259 (Script Exit). 
+See DOC.md for step descriptions of the functions used in the doc fixture. Full function definitions (including 257-259 added in 0.8.0) live in `src/constants.js`. 
 
 
 ## Examples
