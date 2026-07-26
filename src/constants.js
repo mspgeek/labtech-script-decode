@@ -5370,4 +5370,4 @@ const constants = {
  *
  * @type {Constants}
  */
-module.exports = Object.assign(constants, {});
+export default constants;

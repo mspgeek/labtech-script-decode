@@ -1,8 +1,5 @@
-import {createRequire} from 'node:module';
 import {describe, it, expect} from 'vitest';
-
-const require = createRequire(import.meta.url);
-const {constants, interpolate, getFunctionLineDescription} = require('../lib/index');
+import {constants, interpolate, getFunctionLineDescription} from '../src/index.js';
 const {Functions} = constants;
 
 function makeStep(FunctionId, params = {}) {

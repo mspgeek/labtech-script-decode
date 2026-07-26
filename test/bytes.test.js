@@ -1,8 +1,5 @@
-import {createRequire} from 'node:module';
 import {describe, it, expect} from 'vitest';
-
-const require = createRequire(import.meta.url);
-const {base64ToBytes, bytesToBase64} = require('../lib/bytes');
+import {base64ToBytes, bytesToBase64} from '../src/bytes.js';
 
 describe('bytes', () => {
   it('round trips', () => {

@@ -4151,6 +4151,27 @@ Tool Remove: AppID=@INPUTPARAMETER@
         
         
 ### Variable Check
+Runs the THEN if the condition is true.
+
+**Parameters**
+
+| Param | Values | Note |
+| --- | --- | --- |
+| Test the Variable's value | _User Provided_ | Enter Variable Name with the @ symbols around it. |
+| Compare | [Exists, Not Exists, =, Not =, <, <=, >, >=, Contains, Not Contains, In, Not In]  | Exists is true if anything is returned. |
+| To | _User Provided_ | Value to compare to. |
+
+**Example Function Text**
+```        
+If Variable Check
+```
+
+
+
+---
+        
+        
+### Variable Check
 Compares a variable to the specified data and skips if the result is TRUE.
 
 **Parameters**
@@ -4170,27 +4191,6 @@ IF @VARIABLENAME@ Contains @COMPAREVAR@ THEN Jump to :Label
 IF @VARIABLENAME@ Not Contains @COMPAREVAR@ THEN Jump to :Label
 IF @VARIABLENAME@ In @COMPAREVAR@ THEN Jump to :Label
 IF @VARIABLENAME@ Not In @COMPAREVAR@ THEN Jump to :Label
-```
-
-
-
----
-        
-        
-### Variable Check
-Runs the THEN if the condition is true.
-
-**Parameters**
-
-| Param | Values | Note |
-| --- | --- | --- |
-| Test the Variable's value | _User Provided_ | Enter Variable Name with the @ symbols around it. |
-| Compare | [Exists, Not Exists, =, Not =, <, <=, >, >=, Contains, Not Contains, In, Not In]  | Exists is true if anything is returned. |
-| To | _User Provided_ | Value to compare to. |
-
-**Example Function Text**
-```        
-If Variable Check
 ```
 
 

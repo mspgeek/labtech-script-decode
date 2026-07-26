@@ -25,9 +25,10 @@
     "build-all": "npm run build & npm run build-dev & npm run build-module & npm run build-module-dev",
     "docs": "node docs/generate > DOC.md"
   },
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "module": "dist/labtech-script-decode.module.min.js",
+  "type": "module",
   "license": "MIT",
   "version": "0.7.3",
   "dependencies": {
@@ -42,7 +43,7 @@
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
     "babel-loader": "^8.2.2",
-    "jsdoc": "^3.6.3",
+    "jsdoc": "4.0.4",
     "terser-webpack-plugin": "^5.2.4",
     "vitest": "3.2.7",
     "webpack": "^5.57.1",

@@ -8,8 +8,8 @@
  * @private
  */
 // define variables, load libs based on what libs are available.
-const pako = require('pako');
-const {bytesToBase64} = require('./bytes');
+import pako from 'pako';
+import {bytesToBase64} from './bytes.js';
 
 /**
  * @param promise
@@ -45,5 +45,4 @@ function pakoGunzipHandler({resolve, reject}, buffer) {
   }
 }
 
-exports.unzip = pakoGunzipHandler;
-exports.zip = pakoGzipHandler;
+export {pakoGunzipHandler as unzip, pakoGzipHandler as zip};

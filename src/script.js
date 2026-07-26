@@ -5,14 +5,14 @@
 /**
  * @private
  */
-const xml2js = require('xml2js');
+import xml2js from 'xml2js';
 const parseXML = xml2js.parseString;
 
-const validate = require('./validate');
-const gzip = require('./gzip');
-const {getFunctionLineDescription} = require('./functions');
-const constants = require('./constants');
-const {base64ToBytes} = require('./bytes');
+import validate from './validate.js';
+import * as gzip from './gzip.js';
+import {getFunctionLineDescription} from './functions.js';
+import constants from './constants.js';
+import {base64ToBytes} from './bytes.js';
 const {Actions, OsLimits, Continues, FunctionFlags, FunctionTypes, Functions} = constants;
 
 function parseNumbersFixed(str) {
@@ -385,9 +385,4 @@ function toText(input) {
     }));
 }
 
-exports.decode = decode;
-exports.encode = encode;
-exports.encodeXML = encodeXML;
-exports.decodeXML = decodeXML;
-exports.interpolateScriptData = interpolateScriptData;
-exports.toText = toText;
+export {decode, encode, encodeXML, decodeXML, interpolateScriptData, toText};

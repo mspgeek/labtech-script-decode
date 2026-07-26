@@ -1,11 +1,8 @@
 import {readFileSync} from 'node:fs';
 import {join, dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {createRequire} from 'node:module';
 import {describe, it, expect} from 'vitest';
-
-const require = createRequire(import.meta.url);
-const decode = require('../lib/index');
+import decode from '../src/index.js';
 
 const fixturesDir = dirname(fileURLToPath(import.meta.url));
 const exportTestXML = readFileSync(join(fixturesDir, 'Export Test.xml'), 'utf8');

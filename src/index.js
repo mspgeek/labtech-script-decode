@@ -133,24 +133,29 @@
  * @property ParentID
  */
 
-const script = require('./script');
+import {decode, decodeXML, encode, encodeXML, interpolateScriptData, toText} from './script.js';
 /**
  * @type {Constants}
  */
-const constants = require('./constants');
+import constants from './constants.js';
 
-const functions = require('./functions');
+import {functionTemplates, getFunctionLineDescription} from './functions.js';
 
-/**
- *
- * @type {Constants}
- */
-exports.constants = constants;
-exports.decode = script.decode;
-exports.decodeXML = script.decodeXML;
-exports.interpolate = script.interpolateScriptData;
-exports.encode = script.encode;
-exports.encodeXML = script.encodeXML;
-exports.functionTempaltes = functions.functionTemplates;
-exports.getFunctionLineDescription = functions.getFunctionLineDescription;
-exports.toText = script.toText;
+export {
+  constants,
+  decode,
+  decodeXML,
+  interpolateScriptData as interpolate,
+  encode,
+  encodeXML,
+  functionTemplates,
+  // typo kept for back-compat, remove in 1.0
+  functionTemplates as functionTempaltes,
+  getFunctionLineDescription,
+  toText,
+};
+
+export default {
+  constants, decode, decodeXML, interpolate: interpolateScriptData, encode, encodeXML,
+  functionTemplates, functionTempaltes: functionTemplates, getFunctionLineDescription, toText,
+};

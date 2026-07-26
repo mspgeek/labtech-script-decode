@@ -23,5 +23,4 @@ function bytesToBase64(bytes) {
   return btoa(bin);
 }
 
-exports.base64ToBytes = base64ToBytes;
-exports.bytesToBase64 = bytesToBase64;
+export {base64ToBytes, bytesToBase64};

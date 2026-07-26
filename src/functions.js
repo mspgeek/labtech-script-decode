@@ -5,7 +5,8 @@
 /**
  * @private
  */
-const {Functions, RemoteCommands} = require('./constants');
+import constants from './constants.js';
+const {Functions, RemoteCommands} = constants;
 
 /**
  *
@@ -857,5 +858,4 @@ functionTemplates[257] = (p1) => {
 functionTemplates[258] = (p1) => `Label: ${p1}`;
 functionTemplates[259] = () => 'Exit Script with Success';
 
-exports.getFunctionLineDescription = getFunctionLineDescription;
-exports.functionTemplates = functionTemplates;
+export {getFunctionLineDescription, functionTemplates};

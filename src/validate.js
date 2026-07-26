@@ -3,7 +3,7 @@
  * Created by kgrube on 1/31/2018
  */
 
-const Ajv = require('ajv');
+import Ajv from 'ajv';
 
 const LabTech_Expansion = {
   '$id': 'LabTech_Expansion',
@@ -201,4 +201,4 @@ const schemas = [ExtraDataField, File, LabTech_Expansion, LicenseDataObject, Scr
 
 const ajv = new Ajv({schemas, strict: false});
 
-module.exports = ajv.getSchema('LabTech_Expansion');
+export default ajv.getSchema('LabTech_Expansion');
