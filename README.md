@@ -143,7 +143,7 @@ Promise ⇒ Object\<ScriptData\>
 
 ### Constants
 
-A helper object containing a map of ids to function definitions and related data. Available via ESM import, CommonJS require, or UMD global (checks for CommonJS first, then falls back to UMD). Note: the typo alias `functionTempaltes` is exported for backwards compatibility (use `functionTemplates` instead).
+A helper object containing a map of ids to function definitions and related data. Available via ESM import, CommonJS require, or UMD global (checks for CommonJS first, then falls back to UMD).
 
 **Properties**
 
@@ -154,8 +154,11 @@ A helper object containing a map of ids to function definitions and related data
 | FunctionFlags | Base 10 bitstring determining target for this function |
 | FunctionTypes | If or regular function |
 | Functions | Function definitions (IDs 1-259) |
-| FunctionTemplates | Interpolated function templates |
 | OsLimits | Function OS limits |
+
+### functionTemplates
+
+Interpolated function templates mapping function IDs to template functions for rendering script steps. Note: the typo alias `functionTempaltes` is exported for backwards compatibility (use `functionTemplates` instead). Available via ESM import, CommonJS require, or UMD global.
 
 ## Schema
 
