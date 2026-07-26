@@ -9,23 +9,39 @@ A set of utilities to load, parse, encode and interpolate exported LabTech scrip
 npm install --save labtech-script-decode
 ```
 
+## Requirements
+
+- **Node >= 20.19.0** (breaking change from 0.7.x which supported >= 8, now ESM-first)
+
+## Build and Test
+
+```bash
+npm run build    # Vite build (ESM, CJS, and UMD outputs)
+npm test         # Vitest suite
+npm run docs     # Generate DOC.md from function definitions
+```
+
 ## Usage
 
-### Server
+### Server (ESM or CommonJS)
+
 ```javascript
+// ESM import
+import * as labtech_script from 'labtech-script-decode';
+
+// or CommonJS require
 const labtech_script = require('labtech-script-decode');
 
 labtech_script.decodeXML(scriptXML).then(scriptJSON => {})
-
 labtech_script.decode(base64string).then()
 ```
 
 ### Browser
 
-Include using Webpack, Browserify, etc, or directly using a script tag:
+Use via script tag or bundler:
 
 ```html
-<script src="/dist/labtech-script-decode.min.js"></script>
+<script src="/dist/labtech-script-decode.umd.js"></script>
 <script>
   labtech_script.decodeXML(scriptXML)
     .then(scriptJSON => {
@@ -36,7 +52,7 @@ Include using Webpack, Browserify, etc, or directly using a script tag:
 
 ## Documentation
 
-Script functions and their associated [documentation](https://github.com/k-grube/labtech-script-decode/blob/master/DOC.md) for each script function. 
+See [DOC.md](https://github.com/k-grube/labtech-script-decode/blob/master/DOC.md) for all script function definitions (IDs 1-259). Version 0.8.0 adds functions: 257 (Script Resume State), 258 (Script Label), 259 (Script Exit). 
 
 
 ## Examples
@@ -127,7 +143,7 @@ Promise ⇒ Object\<ScriptData\>
 
 ### Constants
 
-A helper object containing a map of ids to 
+A helper object containing a map of ids to function definitions and related data. Available via ESM import, CommonJS require, or UMD global (checks for CommonJS first, then falls back to UMD). Note: the typo alias `functionTempaltes` is exported for backwards compatibility (use `functionTemplates` instead).
 
 **Properties**
 
@@ -136,8 +152,9 @@ A helper object containing a map of ids to
 | Actions | Function location in script |
 | Continues | Function enabled or disabled |
 | FunctionFlags | Base 10 bitstring determining target for this function |
-| FunctionTypes | If or regular function|
-| Functions | Function definitions |
+| FunctionTypes | If or regular function |
+| Functions | Function definitions (IDs 1-259) |
+| FunctionTemplates | Interpolated function templates |
 | OsLimits | Function OS limits |
 
 ## Schema
