@@ -1,0 +1,111 @@
+﻿<LabTech_Expansion
+	Version="110.418"
+	Name="LabTech Script Expansion"
+	Type="PackedScript">
+	<PackedScript>
+		<NewDataSet>
+			<Table>
+				<ScriptId>6570</ScriptId>
+				<FolderId>234</FolderId>
+				<ScriptName>Hell Script v2</ScriptName>
+				<ScriptNotes>It is Hell.</ScriptNotes>
+				<Permission>1,2,3,4,5,6,7,9,</Permission>
+				<EditPermission>1,2,3,4,5,6,7,9,</EditPermission>
+				<ComputerScript>1</ComputerScript>
+				<LocationScript>0</LocationScript>
+				<MaintenanceScript>0</MaintenanceScript>
+				<FunctionScript>0</FunctionScript>
+				<LicenseData>H4sIAAAAAAAEAFWPTQrCMBSE94J3yAFa8ldJUx4BUXGjLlTcp80rZGFb0kbs7aVFoa6GmeEbGDj5Cpse93awBu5jh4YDnRWusdm1sRkwGAZ04eDw7nyYGDT3iL2zY0Iu7QufJQYi8oQIxhXRRaaKLCfbM9AFAbcq+G54YOh920zT/8G3P0bvjJRaOKVlWtlSppyjSq3IWcqEqzO90c7W/MfPANDlofXqA/EUvHDgAAAA</LicenseData>
+				<ScriptData>H4sIAAAAAAAEAN2dXXObWBKG77dq/4P3IpeqcPgQMJVyCUvEZgdLCiBncrWlDzzrKseespXd/fkLxHYkUDdG5wjx6mosS07iZ87h9Nunu99P8fLp7q/1aL6en//9b2dnn36+fi5eZC/9/62f5vm7n+/S+9Xz2cfXN6bzp/n3dJ0+bXzv8v5xMb/f+MbPP+wm+9Dd48O5+PRx+xtbn7r8cbc6NwxXX9mu0VvOF0ZPiNTuzXVH62n66tZ0LXc1v337U4ofKP7NHzf/0S9/XLxO/3r7Lbzl+uUf8PLVy/c//3goXgerc+vTx41Xm7+kOB/ceNHYu/YHnz6+fGfzff3cePm+vvV943wwnFxPvcjPfvz1R42tj5glntYGusen9bmW/Wr5f1++N3x8WN89/Ejz7799/fLe5Dm8+35X/Mjrly/vBA+r9GE9L37v7N3Nl5v0fgFjCOoMQZ0hKHaTK/36Rum1eT5YPn7/60e2yu5WrwTNbWL5r/Ty1UmS04k1F4ynsyRbXNmyTPxo9wJUh1OcCk6jEzj1U8FpdgKncSo4rU7gNE8FZ78TOK1TwWk7neDZPxmebid42qfCU9e0TgB1Tgao6Mb57iIBFULjpOQ0mgz9OGbkZJ0oqtGMAkr68LR2LrPyWhQ6ob+bgoMSOdLL7PwfysBByRl5cL+F80V6rwYdlHRRsOZUsoPSKSJ/vNDsIv8yiJPo2+/+N4qdvpvaRpYxnPn75RkFlEaRR2lJoNw4b0weKpRQsbmtfeNFgXcR+vnWJpCarSCF0ioif7rT6zT2o5tg6Ld10kCpEpE/3Gl0n4PQn3rJFcVNIxbjFs+Gj0gwEcLeZ82ytdfSutPB5AjDrfSb5tHM+DH7HZ4f79PZc/qkhheYCulz6+zLzI+TYDKm1tmH5U96Dz++L9KnD+p3rQ4mTWz2wPgSxomX+Nf+ONk/sqGuorcx8+ewjiVbuBzX4RMyOpZOYWOWmoNXlhSWDGFDlHoVIgsLSl7w8UhdPDfwostZ/tiLB8TzTdvveMDSEwdmKPZjiCUs2HglvvLDMDspr73x6EC7FktGcPHI0p73raVr9NL5apnX6oneYjnv9+x02e/bC2FqekqtxZEfet+IddiQqIElMA5DVHJVGliiwzleiGJgCQqXzQJEIXlYhJOhF+Yo1R64BpZwOBy+/c5aA0pK6FxKmSrVGGzf+VL8Xiqy96MIJTNYikRddSsUofQHS5GqsW6DIpQCYSlSpdVtUITSICxFquKqDYpQ2oSlSBVSt0DRhNIjLEWqfroNilCKhKVoH5EilFphKVK1521QhBItLEWq4rwNiqejXcQRxYt5QuLliOrFPB31Io4oX8zTkS/iiPrFPB39QraMtIHxdASMOKKCsU5HwYgjShjrdCSMOKKGsU5Hw4gjihgLS8RwFf6/qsXV3u1ZlEIRnUQkU6h1Phj7Xzffl7uDt7BECVu45V97AX2xF88u/ukPE2qHDi4mo7e6hoYbFEuRsLVI134ce5dkefm7yn6bLkEsJcKWITE3ywdBh6U+2BrpdzR/DUZe4qkta7CwhAdbP1MpXdhRvBUnwdjbLOyXW4B9LMHBVoXwjz7JCKUPJSkMLhbe/SBTjAtKOhhMzFtuPZIFAyUGODD7ThasAwR1WcECoobiyBKCCvmNmhagYJywHZGysKBie4NVloeHBRXJG6yYjCezaMgLcfXRFFQ4b7BCsr5HXnaxQUXuBt+9cmhYNlScbnBCsY3w08aK1llZM4qCGz/0k43sdPlJFvnxLEziG++d8+Dq6EEF7yandY5BDyrCN9mBPkMv8S8nEZ3QGU5mY+baZBCM48QbD8nxMxX2fPe7DSUOTDb09f/wh7Mkn+2zf9/o7mdpswyaDSUnTDZCHgWRP0yyBcvGffGVF22d1ZIbHkpimHzUXEaj+FyGEhhmg4k0smCglIPJBcMflvd32V97tyJCu/yh9TqMlpo7s30VWD40yleBpTNj+yqwNHEZSnSY7IVLdabve4dxcXeldXRLC9eBEiayQEULQKGkiyxQcrKmQqBYakYSKGmIpBAolsBhr1zZkhPi8dnwaHewNMv+uIiHY1NcWHKESd0oDhEdKJlhMVkZ1WCgRIXV3l2zAyUqLCZbohoMlAqwmJSHYjAuVDRvMakM1WCgonKrvcSFCxVdW0ziQjUYqCjZYmSHajBQ8bDFxMOqwUBFvhyY88G1N/RGo8iPY0ItyLKCCoYFOzePbMZWOAvehYqRBT/+bXfLVuWa53PkXea3Z1yBT7ZSPyc7P1jOkTSY0e1Cxd2CbZwbeNNpS34FLlRULthGOWvppoY2d3uuJqyeac7NnrtIs5fmqr9wbudL16QGgqh0HtGg4nmhcxfm1FOyzv4mmSjY0kKDEgA8SWpqRb2RkAoHA6FBSYY+W/j3zqPofU3GxMcq2frdH6vcgu7+WMldXoOSKX1Zlw7JsFNoUOJFsJ3KWhsHEJSm6XNhJ4FLekVBKRmWkNxQqcbgoCQNa/I32HT5a3xVrvh0hhIv8lidlrBCiRt5rG47WLEst+Wxvs0/PDRXKLmjgCtZ2aWYK5T2sdkC9iQY/u4nAWXXo6geRGAZdds1HZyTyywKkjKLaswPSrLY7d3pCizvbbvWg4x7wJWnY8guKijVYrM5nLGfXAQTzoZSOT0s6cImXaZXk7E/nl1fMOkvxfSwFAp7T3oEelhChL0IbJ8elqe2w8XFhrlcactbo6ff9sVPy7v5UrvtGSu779puFjfMSRPBah16JW6+8cIZ1fZZSxlKfThsC+3VJE7YoyU3vZyNg4QyZTwfTH7F2E1BQskNhx8VkwXNYRCT/ttZ4Dy8Cm6U7XQo2eGwsmMWs1NjcrZx/HUSjVSxg5IcDtsRWxtY57M//KhU7SQLEEqZOKwy+erd+MxQQ1kRh2XG7bRXgCqwLLYdVmXUnKLSqKAkhdNeTarAcs12WLlw4EWEZYftsjnzxP8j4SfR0pN8G3ODivZdduIjhau89Cox/nQSJUSQvw27UuYT+UM/C3svviX+W/hRKvLBss5mCZM1BkcmDKUWXE5oLe1531q6Ri+dr5Y/8wKL5bzfs9Nlv28vhKnpZF5gU5/tyAhsiZCGUhbLgNvl9Jj3Z/aX/ivO/t4fzxTJrU7rCsrYD/0hV61eOyKllBYrL2co/eFyAq4etvS5D6VAJGG9TaFVdfhDiRSXvUiqnc4hvdKgZIorOcpkwB7nMvllLLtt4bKq5pggsRy3D8mx6VbGctkuGok6gw5KzRSdQ1xx2sbue/f8Nm7P5nrldagqEf5ViEKpFxmiZJmfaqJQakWGKFmWrpoolCSRIUqOcFNNFEq3yBAlGxtVE4USMzJErbaIQikeGaL9tohiaR8JonZLRLFMu2WIkr1SqomCiaP9iZJtUqqJgmkmthKMJZrXieUmWWS+o8quYdIDy8+7aFnnBjXFGa2frTxcieJFMPZHG8wkNTxp+N1RhmyF056NUDKW1QLL97voct8fIJkHGXnJvqlLLNNvSYDkCpQBCCZ22NuIvQHm1dsb40aaMgSTN2wvy4EYvu3+uhAHTNioGHE38sPgOmBGCr32PueFGfstUSyH8GIggCxWlQNwsHzDi75/WXzEaV0m16hvHstPvOhZ79QqxJIsgpUsUqtwG2vTZyGWalGBkTq0pTBiaRfBir8jbGYs5SJY5fJllptw/ypk3GEWt8PhUulqxNIxQnYE4mHOZywhw87jdtuYzIvlfg4+kFtg2ad3ZiK3wPJR329+9CEeh1gO6scfE4vlmV70t9P7cxgG2bOLzoMpBYelSPTaGVbk4VHrha7tF/5h2Z8flKDYkyCWHtFZPZLnor0xtXdlGziw/M+LCQItb9fqsJJK61p5WEmpdw3LSv2gjIkNrYAxlnrR2XsrfstXYVU7i0uwGj4/sSzUi4kQTYNF2ecmaYou8BAV0fZBIFGiAxDSVoysmhMlNjrJSefSz6qnvZBe5Z1EU0wOofeZZlrUI71+fqFMRhnLwryYDtJY/WdPMZNoAmi86LD0A4uLHE8SD6NgupEUkGWGJSRYZpQdmXJmWMLA2CcpN/gaz1QNIcRySed5kftSIS8s83SeF7knVfLCulxgeREhvVpeWJcKLC+zDV5YlwosLzKSVckL6y6B5dVvgxdYmM/xstvgBRbnc7ycNniBxfjspegheqTyP5XJYQ+9xL+cRN8CKosN5tNusFd/h724AvNmN7g7PjoxJElJB7NbN7irJ1JhbnXfVrZrNbPWLHmmgxmtG9zVEqk63+Gf8i4v8FqYYJKBuxIYTxL/LJ9LfTbIv8y/OszDTsfyROep/Tb88bx+/H646xQdzBLdZGsr9+1Elrgu0LE80ovxe+oBUuUg2u7orsIQS1uYbH9Y5BddEZNoawj0rkG8k4jzjSrNgK5Ez9UAuRJDl/93WiXsWBLFlJEo0s9JLLVhsmVy8RdyXTaYHy8nkHUsT/ViOlzLhTM6lj86j4iIpqURYQkOFhFxbSONCEtGmO35I+lY7uTF9L/W0GAJA4sVBrnLXzBknQCJ0LYxNiw5II2NyPw2xoalAKSxEXOXG2PDiuCt43ntljKfNYIUy6S8mA/Z2rmAFbZb7L380k0Nbe72XE1YPdOcmz13kWYvzVV/4dzOl65JdJPLUsRyIi8GPjJtLpNwRDaOS5PCCvAtvsPvoKSw4nyLTVGwpA7e1aNj+YcX0xyZeGQyi4aMGahP2v41XoJgooHtLGsRG5hoYMeJ7I+tuq0rQVx5W9fEcVj24sW0xmMdHlhKos8qicOSwtIGffbCT+6YbYwOSzuw13xMb7fsCsOyIi/GUx6HE5Y06PMiipsVoHgfYjmKs/ONeG5j/+vUS65UYcMSBf39h80o5oalCvq8MN2fW218WwsSSifwJeXvkAnBmJs12HgVgmkBWUmvmB6YPpBV9jw9+Z0MJiJYxV8zguddQ4Abr0csKWGzyj7yL4M4ib797n9rFSKWAXgxz7R5x8MkCi6z3RxmgIPxJbmhQ398+evkriSe4sSL3vJW5ULLX6ZkuwstwezCWc5kV0QXOEPpGp4z2cPfBc5YQojlTPb+d4EzlnBiOZMzA7rAGUpX8ZzJWQNd4IwlwVjO5IyCLnDGEmssZ3K2QRc4Y6k4ljM5E6ELnMHEHseZsifpAmcwL3Rep3RZEIJZpPOgu6wIwZzTedBdloRgtuo86C5rQjDvdR50l0UhmEc7D7rLqhDMy50H3WVZCOb5zoPusi4EM4bnQXdZGIK5xvOgu6wMwXzk+ZuVLitDMMd5HnSXlSGYJz0PusvKEMy93mbr5eMv4ZeZH1FlGrIVzWAW9TZbmVvXz/3mpFQxPrN2L8RaemCKjauP/LBO7x/S9XP6/Jy9fbf6QO3wzUmKkuVAYNb0NlfffBR+YPqKq3N+Jz/pBx6YUmKLcmsfeMTUD/KBJ231qIMZ1dtc2e6H5+d/t7qfwXznba5It314WELG4Qp03wNP9kkIZjrvsA24daasdd63jeFhaQyHjZu90I+Saz+Ovcum08qyH77ccq+vHCjF++yJUvz1iX89Db3EJ44VMON6h+1E2hoMVVmq114yVNUIB+ZW73ABNplE226uqSzQHc015UXaE7vXZgUnll5hcdLWk+3hxJIvDtumudmGqfqkxtIsDqNZVA+HA3OWd1ocNQvmE++0OGqW9IfvJhqXkQrK0WCpApdRBcrRYMX8boszOkkj+I6iYeSQcjRYIbjLKBflaLDCaZcdb1Ko2IO5gYAZuLt1biCHvNMEM253+bkbX8KRl3ixT7mXnQ+iyVdVaS0wD3e3xXAay66dI7PLT7A6WIiZdXvjRYF3Efr7XZpj+bgXJp00yXAy9EJ2QpP6yThYxu6FQycNcBbRjmUVuO90gasFCBXIHxKg2BMgVLhf2JrSAA9jNZ1T30wJ1qRCsczhC8vTfS/jpA9iKNVQ+IUxWeNwVpRLctohAxoGW5dslaWYEZ/OEj9i7uFK93vVW7jyPV3pBg7LXr7wIGt+lZTvWkFSzt/VKcBblq51ux1KofAsyXuktlhCSRaeJVlV3Q5LA8uQnmdJttS2xRJL5rAsya7ZtlhiKR6WJdkY2xZLLPHDsiR7X9tiiaWDBFuV9I6ZoEVWqKhemnpBpCjpaGAZ2heGmy0lHQ0sn/rCHZLROtFkmumcb1zFeim1uKP66LM3C5OtCrpmyQsDy4S+cIYkmcb/nq8e/zt9elyny/VZnD79J306C++W6cNz+hv1dCRLOZP505/pmtSQtWDBVA1bvf64WM/vHtLV/U+Yh6rCNrBM6Qu/NWYCFuVemZfHRdm2T3xlpwaWVb3OeoqkS1ezdCvtuSvb6AmRmr3Frav3NM3SrL5jmiuXDHXy20EvGl4FN3TNZjDK00efg1/GS5X0UPH/x2S6frK3rd2pIUNgSZ0917DsThdYIkbnqh10c+GY6cLs6RmvfMGK3iJb4r1+atze6pphmLeLA1HEki86VwjBPC+3VIjskxJLpehcECnxpFSKFEuy6LLVAKNZpPAG2xBYskZnzUhq8Uk/8rAEi8EWTJTvRStL7VUBqlpqWKLEYG8Lr4NxcD27ZlrH/th8vxIHvvw8mfuqfKASB758wKAiQSw1Y+zXbzaMgmmyeftfAf3zI1XNUwauEZxLaZASZR1L+hydMtGOVkcZS9WwlOlmv6OvZSxVdHTKe65lLNXEUiYvyY+/lrGE1tEp77mWsbQXS5ksUjj+WsaSaEenvOdaBpN2XGrGG52NHr/P7x7O8n/50+P9ffr029J2Xd1Olz190b/N8zVGzzXyfI2jabrtOKYwiUSh0nyNDqYCuXzNFhfFqQYdTL+11zNuGMcQXa+vR/P1PHv5f78xFo0EogEA</ScriptData>
+				<ScriptVersion>1</ScriptVersion>
+				<ScriptGuid>3392d793-cab3-11e7-a280-02df4959daf1</ScriptGuid>
+				<ScriptFlags>0</ScriptFlags>
+				<Parameters></Parameters>
+			</Table>
+		</NewDataSet>
+		<PackedScript>
+			<NewDataSet>
+				<Table>
+					<ScriptId>5784</ScriptId>
+					<FolderId>142</FolderId>
+					<ScriptName>Add Reflexion Monitoring</ScriptName>
+					<ScriptNotes>Add Reflexion monitoring to an agent via remote monitor. This script will also reset the Reflexion remote monitors to the default settings if ran again on the same agent.</ScriptNotes>
+					<Permission>0,</Permission>
+					<EditPermission>0,</EditPermission>
+					<ComputerScript>1</ComputerScript>
+					<LocationScript>1</LocationScript>
+					<MaintenanceScript>0</MaintenanceScript>
+					<FunctionScript>0</FunctionScript>
+					<LicenseData>H4sIAAAAAAAEAFWPwQrCMBBE74L/kA9oSJNqgmUJiIoXC6LiPU2Xkkta0gTs32uLQj0sy8zsG1i4OIt+wKOJRsNj7FFzYPOGW/KHLvmIQefAFgpOr96FiUFddb4xY0b2qU1DJCLPPsMFUaUoSi7JtQK2OIe7Da6PTwyD6/zU+29883NyjbbKyK3dFRRNYynnyGltjaQKrZSq5ptc4I+fAWDLb9arNy9rsATdAAAA</LicenseData>
+					<ScriptData>H4sIAAAAAAAEAO1cb3OiOBh/fzP3HdIXjLsztQL+q17xyijuMYfaEdx9szNrhGxlDsGF2N1++wsQLNKWtlsoYp2RmicJIfklz79faS9U3TXXeAAx7P35BwAXoewFAhGlX9iFfuvQRJbhgVrUcAVduEIYubG6T5azgFasIhzsM+lkOnaPu6jtVuz0+rQxjZ7ehq2m3qlXETT0KschrrrQYavaRnqr1V5wDZZH0SjBDcGca/FJ0+FUjNbbVYg6phOgJVo/3NiBLBt+W0yKL5JLLJpPyPWE3EjIzRgejot7LJmv/03r+o6NTXuD/PptmbZNPMVcmcEtUZG2yLaBbAyDxZDWuBiH5A6FFFj4NFjqnceB6XVFwwBT9N1Cv0gz0BwMLeAvwnUsINsLZ2MbQIEY2fot6bdyMAIjxzax417U6BjvF1qunQKtiiykYzAXr8nT5cEcDKeTEZhDX/Tm4OcSuQjM+85qvSFK6HcQwKVORdO4BOJ4AOZjoqNzoMj/SqDyzH2qPLwzvRat53d3yIeIlnZ2qtedrQ0y4uuORyN1u7mst5vLcbv5NEUiemTa17+J1VkuusRnDS6fI7itNFWSx6o01YA81iZ3CvQh1I1TMFccnagPKfQtM9S10x3FItLANW8QbVgi/b9wHr4oWsjFCXGEPI88JhyGLFenY5o2GfAGWn75i6+/YQHi4BHEx042OHo2dB03qpaDoRXoYVWH2/IQmhYyfMkv9cn5CG6WB4Gn3k5GxbdWOJUltK/DG/zbv5GR0VaYeSh43BStyZ73SdO1497OP4LPojKT1A/PNh6nFZZecWNEq3hyceRixuJIYgCjaqI2UxlARmX6iiyNtaDh61emPxldzTRpGnaEGDDKpC9q8mQc1nx3XMAMZUkZhLKLvI1Fek0ldaZozNnJyUn+D6GrqrP+zyXG626ttqIq6UZ4ndkI11z8s0qMIXRs6/ZsvVz/vRKgt97tRMY49wcinya5ImCjU+2bh7HjrqBl+SjzLMdVObbKNQDb6Ta5Ln/ug9tpd6osRz6A5brBh06SIs8+eiuZzzcFLjSkLy8tR4fW0vFwcMfHv3KxL/Uy2Rcu1XqnhkFEqd88DmqUCtv0EDOLMCJbdJtlijJTD26A7e8HHrmg2yrT2U2NO2ZXA1GT7kIOVdISEYJwOK4QxOIbIfSJUZQjZOEcaaQkBE7yLlwSKpV4xCT4vnMbNQlPeNG7aIkOQ0MkoRI8IxEM+bXgyz/SVNoJD4X7WVeUswmM98MKoWJy0ZV2mXTlFVRCET70vExWfl+4hORGvRWZ8LwDks4mdN4Lm1CENnGZU3NHOuEA6YR79uPIJ2TEJ2yRPVhCgcucDt5TRmEmA/GGKClcmJaJ38Z8l4oNfh2jUIh7zJwN219OoRB8S8WIHVmF/WYVnvClpacVuMwZzj3lFYrwpJnzm++BV0hs1FvRCs86H0+8o5A5R7evtEIRypQ5SXdkFQ6QVUhaj1RSgTtwUsEjIdNDZAFN6hv+8pss+3hiXypOIHNSd284gak4EKdFGF2+VFTu67iAIuDNnMbaXyqgCHhLxWQdmYAtE/AEEfCIW9sm+On5fWMnv6f+r/R5PF+ud+xekscX5/0yZxIPM39/cIPyy9tfcB7S83U+c+5rf/L14pTmcF7qO+bpWebpD1uJd5+fu9CAyV9oHGqKzpfrJcb0FH1o2qa3zAenUnGdL027i3NNmTNE+5RuFwZrvVQk0THNfkma/bB3eteZdr1c756lG+ccnVg9c/atMGsbooQMAMM0C9pGjajX5r4RdkNzS99T8fL5c+165lzPM/LWSKb/PuR/yEQK4U1EAAA=</ScriptData>
+					<ScriptVersion>1</ScriptVersion>
+					<ScriptGuid>c7a65c93-eadc-11e1-bca6-7ec667b1402e</ScriptGuid>
+					<ScriptFlags>0</ScriptFlags>
+					<Parameters></Parameters>
+				</Table>
+			</NewDataSet>
+			<ScriptFolder>
+				<NewDataSet>
+					<Table>
+						<FolderID>142</FolderID>
+						<ParentID>47</ParentID>
+						<Name>Agent Maintenance</Name>
+						<GUID>8563676e-b548-4a89-b885-71c9c124e2fa</GUID>
+					</Table>
+				</NewDataSet>
+			</ScriptFolder>
+			<ScriptFolder>
+				<NewDataSet>
+					<Table>
+						<FolderID>47</FolderID>
+						<ParentID>0</ParentID>
+						<Name>_System Automation</Name>
+						<GUID>68c423ca-41a6-4fae-a052-08a4fd27ea53</GUID>
+					</Table>
+				</NewDataSet>
+			</ScriptFolder>
+		</PackedScript>
+		<Tool />
+		<ExtraDataField>
+			<NewDataSet>
+				<Table>
+					<ID>378</ID>
+					<Form>2</Form>
+					<Name>1 - Patch Day VM Host Role</Name>
+					<Sort>10</Sort>
+					<NoBreak>0</NoBreak>
+					<FType>2</FType>
+					<Section>Patching</Section>
+					<UnEditable>0</UnEditable>
+					<Collapsed>0</Collapsed>
+					<Fill>Not Selected~None~Monday~Tuesday~Wednesday~Thursday~Friday~Saturday~Sunday~Everyday~Custom1~Custom2~Custom3|Select Scheduled Installation day of the week.|0</Fill>
+					<LtGuid>34cd0cf3-2f61-11e1-ac0f-3d76979114ae</LtGuid>
+					<IsPassword>false</IsPassword>
+					<IsEncrypted>false</IsEncrypted>
+					<IsHidden>false</IsHidden>
+					<IsRestricted>false</IsRestricted>
+				</Table>
+			</NewDataSet>
+		</ExtraDataField>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>234</FolderID>
+					<ParentID>202</ParentID>
+					<Name>Script Tests</Name>
+					<GUID>4d24758b-3c64-494d-bd4a-eceabbc53c41</GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>202</FolderID>
+					<ParentID>0</ParentID>
+					<Name>Covenant - Dev Scripts - Do Not Use</Name>
+					<GUID>74529cfa-5979-4fd7-aaf5-706788b3d2ee</GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+	</PackedScript>
+</LabTech_Expansion>
