@@ -11,7 +11,7 @@ npm install --save labtech-script-decode
 
 ## Requirements
 
-- **Node >= 20.19.0** (breaking change from 0.7.x which supported >= 8, now ESM-first, see 1.0.0 release notes)
+- **Node >= 20.19.0**, ESM-first (CJS and UMD builds included via the exports map)
 
 ## Build and Test
 
@@ -52,7 +52,7 @@ Use via script tag or bundler:
 
 ## Documentation
 
-See DOC.md for step descriptions of the functions used in the doc fixture. Full function definitions (including 257-259 added in 1.0.0) live in `src/constants.js`. 
+See DOC.md for step descriptions of the functions used in the doc fixture. Full function definitions live in `src/constants.js`. 
 
 
 ## Examples
