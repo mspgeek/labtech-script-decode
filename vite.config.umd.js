@@ -1,8 +1,8 @@
-import {defineConfig} from 'vite';
-import {nodePolyfills} from 'vite-plugin-node-polyfills';
+import { defineConfig } from 'vite'
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
 export default defineConfig({
-  plugins: [nodePolyfills({include: ['events', 'stream', 'string_decoder', 'timers', 'buffer']})],
+  plugins: [nodePolyfills({ include: ['events', 'stream', 'string_decoder', 'timers', 'buffer'] })],
   build: {
     emptyOutDir: false,
     lib: {
@@ -13,4 +13,4 @@ export default defineConfig({
     },
     sourcemap: true,
   },
-});
+})

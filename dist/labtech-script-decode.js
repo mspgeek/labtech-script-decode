@@ -139,7 +139,16 @@ const E = {
     },
     Parameters: { type: "string" }
   }
-}, x = [w, v, E, k, L, R, O, A], V = new C({ schemas: x, strict: !1 }), N = V.getSchema("LabTech_Expansion");
+}, x = [
+  w,
+  v,
+  E,
+  k,
+  L,
+  R,
+  O,
+  A
+], V = new C({ schemas: x, strict: !1 }), N = V.getSchema("LabTech_Expansion");
 function U(e) {
   const t = ("" + e).replace(/\s+/g, ""), a = atob(t), i = new Uint8Array(a.length);
   for (let m = 0; m < a.length; m++)
@@ -285,11 +294,7 @@ const D = {
         },
         {
           ParamName: "ID Type",
-          Values: [
-            "Computer",
-            "Location",
-            "Client"
-          ],
+          Values: ["Computer", "Location", "Client"],
           Description: "Type of object of the above ID."
         }
       ],
@@ -322,18 +327,7 @@ const D = {
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ],
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"],
           Description: "For keys, Exists and Not Exists are the only applicable choices."
         },
         {
@@ -406,10 +400,7 @@ const D = {
         },
         {
           ParamName: "",
-          Values: [
-            "Exists",
-            "Not Exists"
-          ],
+          Values: ["Exists", "Not Exists"],
           Description: "Returns true is the condition is met."
         }
       ],
@@ -468,18 +459,7 @@ const D = {
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ],
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"],
           Description: "Exists returns true if key has any data."
         },
         {
@@ -501,18 +481,7 @@ const D = {
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ],
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"],
           Description: "Logical Operator."
         },
         {
@@ -585,10 +554,7 @@ const D = {
         },
         {
           ParamName: "",
-          Values: [
-            "Wait for Process",
-            "Return Immediately"
-          ],
+          Values: ["Wait for Process", "Return Immediately"],
           Description: "Wait for process to end before returning."
         }
       ],
@@ -660,10 +626,7 @@ const D = {
         },
         {
           ParamName: "",
-          Values: [
-            "Wait Until Finished",
-            "Return Now"
-          ],
+          Values: ["Wait Until Finished", "Return Now"],
           Description: "Wait for the download if you need the file in the next steps."
         }
       ],
@@ -832,14 +795,7 @@ const D = {
         },
         {
           ParamName: "Data Type",
-          Values: [
-            "Reg_String",
-            "Reg_Binary",
-            "Reg_DWORD",
-            "Reg_Multi_String",
-            "Reg_QWORD",
-            "Reg_Ex_String"
-          ],
+          Values: ["Reg_String", "Reg_Binary", "Reg_DWORD", "Reg_Multi_String", "Reg_QWORD", "Reg_Ex_String"],
           Description: "The type of data to write."
         }
       ],
@@ -854,9 +810,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Local File",
-          Values: [
-            "Select Name From ServerFiles Order By Name"
-          ],
+          Values: ["Select Name From ServerFiles Order By Name"],
           Description: "Local file to send, must exist in the LTShare\\Transfer directory.  (IIS blocks some transfer of some files like *.config, *.vb, *.licx... by default)"
         },
         {
@@ -1164,12 +1118,7 @@ const D = {
         },
         {
           ParamName: "Severity",
-          Values: [
-            "Informational",
-            "Warning",
-            "Error",
-            "Critical"
-          ],
+          Values: ["Informational", "Warning", "Error", "Critical"],
           Description: "The severity of the alert."
         },
         {
@@ -1196,10 +1145,7 @@ const D = {
         },
         {
           ParamName: "Clear",
-          Values: [
-            "Yes",
-            "No"
-          ],
+          Values: ["Yes", "No"],
           Description: "Clear this computers alerts after sending."
         }
       ],
@@ -1321,18 +1267,7 @@ const D = {
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ],
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"],
           Description: ""
         },
         {
@@ -1420,25 +1355,12 @@ const D = {
       ParamNames: [
         {
           ParamName: "AutoStart Def",
-          Values: [
-            "Select convert(CONCAT(Name,CHAR(0),AUTODEFID) using latin1) From AutoStartupDefs"
-          ],
+          Values: ["Select convert(CONCAT(Name,CHAR(0),AUTODEFID) using latin1) From AutoStartupDefs"],
           Description: "Pick the Location to check."
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ]
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"]
         },
         {
           ParamName: "To"
@@ -1463,28 +1385,12 @@ const D = {
         },
         {
           ParamName: "Event Type",
-          Values: [
-            "Security",
-            "Error",
-            "Information",
-            "Warning"
-          ],
+          Values: ["Security", "Error", "Information", "Warning"],
           Description: "Type of event to match"
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ],
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"],
           Description: ""
         },
         {
@@ -1551,9 +1457,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Tool ID",
-          Values: [
-            "Select convert(CONCAT(Name,CHAR(0),AppID) using latin1) From AvailableApps Order by Name"
-          ]
+          Values: ["Select convert(CONCAT(Name,CHAR(0),AppID) using latin1) From AvailableApps Order by Name"]
         }
       ],
       Description: "Checks if Tool or Tweak is installed.",
@@ -1567,17 +1471,12 @@ const D = {
       ParamNames: [
         {
           ParamName: "Action",
-          Values: [
-            "Install",
-            "Remove"
-          ],
+          Values: ["Install", "Remove"],
           Description: "Install or Remove."
         },
         {
           ParamName: "Tool ID",
-          Values: [
-            "Select Convert(CONCAT(Name,CHAR(0),AppID) using latin1) From AvailableApps Order by Name"
-          ],
+          Values: ["Select Convert(CONCAT(Name,CHAR(0),AppID) using latin1) From AvailableApps Order by Name"],
           Description: "Name of Tool to perform action to."
         }
       ],
@@ -1653,9 +1552,7 @@ const D = {
         },
         {
           ParamName: "User",
-          Values: [
-            "Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users  Where UserID>0 Order By Name"
-          ],
+          Values: ["Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users  Where UserID>0 Order By Name"],
           Description: "User to Assign the ticket to or type a Variable name."
         }
       ],
@@ -1787,9 +1684,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Extra Field",
-          Values: [
-            "Select convert(CONCAT(Name,'-',Form,CHAR(0),ID) using latin1) From ExtraField order by Form"
-          ],
+          Values: ["Select convert(CONCAT(Name,'-',Form,CHAR(0),ID) using latin1) From ExtraField order by Form"],
           Description: "The field ends with the type of ID. 1=computer 2=locationid 3=client 4=probe 5=device 6=ticket 7=group 13=contact"
         },
         {
@@ -1966,10 +1861,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Type",
-          Values: [
-            "TCP",
-            "UDP"
-          ],
+          Values: ["TCP", "UDP"],
           Description: "Select the protocol to use."
         },
         {
@@ -2025,9 +1917,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Report",
-          Values: [
-            "Select Name From Reports Order By Name"
-          ],
+          Values: ["Select Name From Reports Order By Name"],
           Description: "The report to run."
         },
         {
@@ -2058,9 +1948,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Report",
-          Values: [
-            "Select Name From Reports Order By Name"
-          ],
+          Values: ["Select Name From Reports Order By Name"],
           Description: "The report to run."
         },
         {
@@ -2083,27 +1971,14 @@ const D = {
       ParamNames: [
         {
           ParamName: "Extra Field",
-          Values: [
-            "Select convert(CONCAT(Name,'-',Form,CHAR(0),ID) using latin1) From ExtraField order by Form"
-          ]
+          Values: ["Select convert(CONCAT(Name,'-',Form,CHAR(0),ID) using latin1) From ExtraField order by Form"]
         },
         {
           ParamName: "ID"
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ]
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"]
         },
         {
           ParamName: "To"
@@ -2218,18 +2093,7 @@ const D = {
         },
         {
           ParamName: "Operator",
-          Values: [
-            "+",
-            "-",
-            "*",
-            "\\",
-            "div",
-            "mod",
-            "pow",
-            "abs",
-            "max",
-            "min"
-          ],
+          Values: ["+", "-", "*", "\\", "div", "mod", "pow", "abs", "max", "min"],
           Description: "Operation to perform."
         },
         {
@@ -2274,9 +2138,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Extra Field",
-          Values: [
-            "Select convert(CONCAT(Name,'-',Form,CHAR(0),ID) using latin1) From ExtraField order by Form"
-          ],
+          Values: ["Select convert(CONCAT(Name,'-',Form,CHAR(0),ID) using latin1) From ExtraField order by Form"],
           Description: "The field ends with the type of ID. 1=computer 2=location 3=client 4=probe 5=device 6=ticket 7=group 13=contact"
         },
         {
@@ -2321,9 +2183,7 @@ const D = {
         },
         {
           ParamName: "User ID",
-          Values: [
-            "Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users  Where UserID>0 Order By Name"
-          ],
+          Values: ["Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users  Where UserID>0 Order By Name"],
           Description: "ID Number of the user to perform the Finish or type a Variable name"
         },
         {
@@ -2346,10 +2206,7 @@ const D = {
         },
         {
           ParamName: "Action",
-          Values: [
-            "Stall",
-            "Unstall"
-          ],
+          Values: ["Stall", "Unstall"],
           Description: "Stall Or Unstall Ticket"
         },
         {
@@ -2372,9 +2229,7 @@ const D = {
         },
         {
           ParamName: "User ID",
-          Values: [
-            "Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users  Where UserID>0 Order By Name"
-          ],
+          Values: ["Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users  Where UserID>0 Order By Name"],
           Description: "ID Number of the user to perform the Open or type a Variable name"
         },
         {
@@ -2397,9 +2252,7 @@ const D = {
         },
         {
           ParamName: "User ID",
-          Values: [
-            "Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users  Where UserID>0 Order By Name"
-          ],
+          Values: ["Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users  Where UserID>0 Order By Name"],
           Description: "ID Number of the user to perform the Comment or type a Variable name"
         },
         {
@@ -2408,10 +2261,7 @@ const D = {
         },
         {
           ParamName: "Respond",
-          Values: [
-            "Yes",
-            "No"
-          ],
+          Values: ["Yes", "No"],
           Description: "Send an Email to the Requestor"
         }
       ],
@@ -2470,18 +2320,7 @@ const D = {
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ],
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"],
           Description: "For Keys Exists and Not Exists are the only applicable choices."
         },
         {
@@ -2526,10 +2365,7 @@ const D = {
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists"
-          ],
+          Values: ["Exists", "Not Exists"],
           Description: "Returns true if the condition is met."
         },
         {
@@ -2592,18 +2428,7 @@ const D = {
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ],
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"],
           Description: "Logical Operator."
         },
         {
@@ -2716,25 +2541,12 @@ const D = {
       ParamNames: [
         {
           ParamName: "AutoStart Def",
-          Values: [
-            "Select convert(CONCAT(Name,CHAR(0),AUTODEFID) using latin1) From AutoStartupDefs"
-          ],
+          Values: ["Select convert(CONCAT(Name,CHAR(0),AUTODEFID) using latin1) From AutoStartupDefs"],
           Description: "Pick the Location to check."
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ],
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"],
           Description: "Logical Operator."
         },
         {
@@ -2757,9 +2569,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Tool ID",
-          Values: [
-            "Select convert(CONCAT(Name,CHAR(0),AppID) using latin1) From AvailableApps Order by Name"
-          ],
+          Values: ["Select convert(CONCAT(Name,CHAR(0),AppID) using latin1) From AvailableApps Order by Name"],
           Description: "Name of Tool to check."
         },
         {
@@ -2804,10 +2614,7 @@ const D = {
         },
         {
           ParamName: "",
-          Values: [
-            "Wait for Process",
-            "Return Immediatly"
-          ],
+          Values: ["Wait for Process", "Return Immediatly"],
           Description: "Wait for process to end before returning."
         }
       ],
@@ -2844,10 +2651,7 @@ const D = {
         },
         {
           ParamName: "",
-          Values: [
-            "Wait for Process",
-            "Return Immediatly"
-          ],
+          Values: ["Wait for Process", "Return Immediatly"],
           Description: "Wait for process to end before returning."
         },
         {
@@ -2906,9 +2710,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Group Name",
-          Values: [
-            "Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"
-          ],
+          Values: ["Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"],
           Description: ""
         },
         {
@@ -2927,9 +2729,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Group Name",
-          Values: [
-            "Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"
-          ],
+          Values: ["Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"],
           Description: "Name of the group to check."
         },
         {
@@ -2952,11 +2752,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Action",
-          Values: [
-            "All Missing Patches",
-            "Missing Security Patches",
-            "Missing Approved Patches"
-          ],
+          Values: ["All Missing Patches", "Missing Security Patches", "Missing Approved Patches"],
           Description: "Action to perform."
         },
         {
@@ -3008,9 +2804,7 @@ const D = {
         },
         {
           ParamName: "User ID",
-          Values: [
-            "Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users Order By Name"
-          ],
+          Values: ["Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users Order By Name"],
           Description: "ID Number of the user to perform the Comment or type a Variable name"
         },
         {
@@ -3051,9 +2845,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Group Name",
-          Values: [
-            "Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"
-          ],
+          Values: ["Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"],
           Description: "Name of group to approve patches to."
         }
       ],
@@ -3112,9 +2904,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Message",
-          Values: [
-            "Select Convert(Concat(Name,CHAR(0),MessageID) using UTF8) From msg_messages Order By Name"
-          ],
+          Values: ["Select Convert(Concat(Name,CHAR(0),MessageID) using UTF8) From msg_messages Order By Name"],
           Description: "The Message to use."
         },
         {
@@ -3201,26 +2991,17 @@ const D = {
         },
         {
           ParamName: "Newest on Top",
-          Values: [
-            "Yes",
-            "No"
-          ],
+          Values: ["Yes", "No"],
           Description: "List Items starting with the newest."
         },
         {
           ParamName: "HTML",
-          Values: [
-            "Yes",
-            "No"
-          ],
+          Values: ["Yes", "No"],
           Description: "Use HTML for message."
         },
         {
           ParamName: "For Customer",
-          Values: [
-            "Yes",
-            "No"
-          ],
+          Values: ["Yes", "No"],
           Description: "Hide internal Ticketing information. "
         }
       ],
@@ -3304,11 +3085,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Control Command",
-          Values: [
-            "Reattempt Push",
-            "Reinventory Devices",
-            "Rescan Network"
-          ],
+          Values: ["Reattempt Push", "Reinventory Devices", "Rescan Network"],
           Description: "The Command to send to the Probe."
         }
       ],
@@ -3345,11 +3122,7 @@ const D = {
         },
         {
           ParamName: "Mode",
-          Values: [
-            "AutoStart",
-            "Manual",
-            "Disabled"
-          ],
+          Values: ["AutoStart", "Manual", "Disabled"],
           Description: "The startup mode to set."
         }
       ],
@@ -4001,10 +3774,7 @@ const D = {
         },
         {
           ParamName: "Failed",
-          Values: [
-            "False",
-            "True"
-          ],
+          Values: ["False", "True"],
           Description: "Is this a Failure?"
         },
         {
@@ -4049,10 +3819,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Operation",
-          Values: [
-            "Download",
-            "Status Check"
-          ],
+          Values: ["Download", "Status Check"],
           Description: "The operation to preform."
         },
         {
@@ -4246,9 +4013,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Local File",
-          Values: [
-            "Select Name From ServerFiles Order By Name"
-          ],
+          Values: ["Select Name From ServerFiles Order By Name"],
           Description: "Local file to send, must exist in the LTShare\\Transfer directory.  (IIS blocks some transfer of some files like *.config, *.vb, *.licx... by default)"
         },
         {
@@ -4275,10 +4040,7 @@ const D = {
         },
         {
           ParamName: "",
-          Values: [
-            "Wait Until Finished",
-            "Return Now"
-          ],
+          Values: ["Wait Until Finished", "Return Now"],
           Description: "Wait for the download if you need the file in the next steps."
         }
       ],
@@ -4297,9 +4059,7 @@ const D = {
         },
         {
           ParamName: "User ID",
-          Values: [
-            "Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users Where UserID>0 Order By Name"
-          ],
+          Values: ["Select convert(CONCAT(Name,CHAR(0),UserID) using UTF8) from users Where UserID>0 Order By Name"],
           Description: "The user to perform the Attach or type a Variable name"
         },
         {
@@ -4402,11 +4162,7 @@ const D = {
         },
         {
           ParamName: "ID Type",
-          Values: [
-            "Mobile Device",
-            "Location",
-            "Client"
-          ],
+          Values: ["Mobile Device", "Location", "Client"],
           Description: "Type of object of the above ID."
         }
       ],
@@ -4421,19 +4177,11 @@ const D = {
       ParamNames: [
         {
           ParamName: "Voice Roaming",
-          Values: [
-            "Disabled",
-            "Enabled",
-            "Do not alter"
-          ]
+          Values: ["Disabled", "Enabled", "Do not alter"]
         },
         {
           ParamName: "Data Roaming",
-          Values: [
-            "Disabled",
-            "Enabled",
-            "Do not alter"
-          ]
+          Values: ["Disabled", "Enabled", "Do not alter"]
         }
       ],
       Description: "Runs a Mobile Command to set mobile device voice and data roaming.",
@@ -4472,15 +4220,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Check Type",
-          Values: [
-            "Created",
-            "Modified",
-            "Accessed",
-            "Version",
-            "Contents",
-            "Size",
-            "MD5"
-          ],
+          Values: ["Created", "Modified", "Accessed", "Version", "Contents", "Size", "MD5"],
           Description: "The type of file compare to perform."
         },
         {
@@ -4507,15 +4247,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Check Type",
-          Values: [
-            "Created",
-            "Modified",
-            "Accessed",
-            "Version",
-            "Contents",
-            "Size",
-            "MD5"
-          ],
+          Values: ["Created", "Modified", "Accessed", "Version", "Contents", "Size", "MD5"],
           Description: "The type of file compare to perform."
         },
         {
@@ -4565,24 +4297,11 @@ const D = {
       ParamNames: [
         {
           ParamName: "Property Name",
-          Values: [
-            "Select Distinct(PropertyName) FROM TemplateProperties Order By PropertyName"
-          ]
+          Values: ["Select Distinct(PropertyName) FROM TemplateProperties Order By PropertyName"]
         },
         {
           ParamName: "Compare",
-          Values: [
-            "Exists",
-            "Not Exists",
-            "=",
-            "Not =",
-            "<",
-            "<=",
-            ">",
-            ">=",
-            "Contains",
-            "Not Contains"
-          ]
+          Values: ["Exists", "Not Exists", "=", "Not =", "<", "<=", ">", ">=", "Contains", "Not Contains"]
         },
         {
           ParamName: "To"
@@ -4599,9 +4318,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Property Name",
-          Values: [
-            "Select Distinct(PropertyName) FROM TemplateProperties Order By PropertyName"
-          ],
+          Values: ["Select Distinct(PropertyName) FROM TemplateProperties Order By PropertyName"],
           Description: "The name of property to retrieve."
         },
         {
@@ -4631,12 +4348,7 @@ const D = {
         },
         {
           ParamName: "Target Type",
-          Values: [
-            "System",
-            "Client",
-            "Location",
-            "Computer"
-          ],
+          Values: ["System", "Client", "Location", "Computer"],
           Description: "The target of license."
         },
         {
@@ -4669,9 +4381,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "GUID",
-          Values: [
-            "Select CONVERT(CONCAT(Name,CHAR(0),GUID) using UTF8) From Plugins Order By Name"
-          ]
+          Values: ["Select CONVERT(CONCAT(Name,CHAR(0),GUID) using UTF8) From Plugins Order By Name"]
         }
       ],
       Description: "Checks if a Plugin is loaded and enabled for use.",
@@ -4754,9 +4464,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "GUID",
-          Values: [
-            "Select CONVERT(CONCAT(Name,CHAR(0),GUID) using UTF8) From Plugins Order By Name"
-          ],
+          Values: ["Select CONVERT(CONCAT(Name,CHAR(0),GUID) using UTF8) From Plugins Order By Name"],
           Description: "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check."
         },
         {
@@ -4884,12 +4592,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Script Type",
-          Values: [
-            "PowerShell",
-            "VBScript",
-            "Batch",
-            "PowerShell Bypass"
-          ],
+          Values: ["PowerShell", "VBScript", "Batch", "PowerShell Bypass"],
           Description: "Select Script Type."
         },
         {
@@ -4902,10 +4605,7 @@ const D = {
         },
         {
           ParamName: "Script Credentials",
-          Values: [
-            "Run as Local Agent",
-            "Run as Admin"
-          ],
+          Values: ["Run as Local Agent", "Run as Admin"],
           Description: "Select Credentials to Use"
         },
         {
@@ -5232,9 +4932,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Group Name",
-          Values: [
-            "Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"
-          ],
+          Values: ["Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"],
           Description: "Name of the group to check."
         },
         {
@@ -5257,9 +4955,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Group Name",
-          Values: [
-            "Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"
-          ],
+          Values: ["Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"],
           Description: ""
         },
         {
@@ -5278,9 +4974,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Group Name",
-          Values: [
-            "Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"
-          ],
+          Values: ["Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"],
           Description: "Name of the group to check."
         },
         {
@@ -5303,9 +4997,7 @@ const D = {
       ParamNames: [
         {
           ParamName: "Group Name",
-          Values: [
-            "Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"
-          ],
+          Values: ["Select CONVERT(CONCAT(FullName,CHAR(0),GroupID) using Latin1) From MasterGroups Order by FullName"],
           Description: ""
         },
         {
@@ -5527,7 +5219,14 @@ function f(e) {
     const { FunctionType: t, Name: a } = e.FunctionObject;
     return `${t} ${a}`;
   }
-  return r[e.FunctionId](e.Param1, e.Param2, e.Param3, e.Param4, e.Param5, e.Sort + 1);
+  return r[e.FunctionId](
+    e.Param1,
+    e.Param2,
+    e.Param3,
+    e.Param4,
+    e.Param5,
+    e.Sort + 1
+  );
 }
 function u(e) {
   let t = !1, a = e;
@@ -5979,23 +5678,29 @@ r[258] = (e) => `Label: ${e}`;
 r[259] = () => "Exit Script with Success";
 const g = P.parseString, { Actions: B, OsLimits: j, Continues: _, FunctionFlags: J, FunctionTypes: q, Functions: T } = D;
 function I(e) {
-  return isNaN(e) || (e = e % 1 === 0 ? e.includes("0x") ? e : parseInt(e, 10) : parseFloat(e)), e;
+  return isNaN(e) || (e % 1 === 0 ? e = e.includes("0x") ? e : parseInt(e, 10) : e = parseFloat(e)), e;
 }
 function F(e) {
   return new Promise((t, a) => {
     const i = Array.isArray(e) ? Uint8Array.from(e) : U(e);
     return W({ resolve: t, reject: a }, i);
-  }).then((t) => new Promise((a, i) => {
-    g(t, {
-      explicitArray: !1,
-      valueProcessors: [I]
-    }, (m, s) => m ? i(m) : a(s));
-  }));
+  }).then(
+    (t) => new Promise((a, i) => {
+      g(
+        t,
+        {
+          explicitArray: !1,
+          valueProcessors: [I]
+        },
+        (m, s) => m ? i(m) : a(s)
+      );
+    })
+  );
 }
 function h(e, t = {}, a = !1) {
   return new Promise((i, m) => {
     let o = new P.Builder(t).buildObject(e);
-    return a && (o = o.replace(/<((?!.+ \/>)[^\/>]+)\/>/g, "<$1 />"), o += `\r
+    return a && (o = o.replace(/<((?!.+ \/>)[^/>]+)\/>/g, "<$1 />"), o += `\r
 `), M({ resolve: i, reject: m }, o);
   });
 }
@@ -6015,15 +5720,19 @@ function Q(e) {
       PackedScript: t,
       handler: Y,
       promiseHandler: b
-    }).then((m) => i.buildObject(m)).then((m) => m.replace(/<([^\/>]+)\/>/g, "<$1></$1>"));
+    }).then((m) => i.buildObject(m)).then((m) => m.replace(/<([^/>]+)\/>/g, "<$1></$1>"));
   });
 }
 function y(e) {
   return new Promise((t, a) => {
-    g(e, {
-      explicitArray: !1,
-      valueProcessors: [I]
-    }, (i, m) => i ? a(i) : t(m));
+    g(
+      e,
+      {
+        explicitArray: !1,
+        valueProcessors: [I]
+      },
+      (i, m) => i ? a(i) : t(m)
+    );
   }).then((t) => {
     if (!t || !t.LabTech_Expansion)
       throw new Error("Could not parse XML.");
@@ -6049,18 +5758,26 @@ function Y(e) {
     return a.ScriptSteps.forEach((m) => {
       delete m.ActionObject, delete m.ContinueObject, delete m.FunctionObject, delete m.StepDescription, delete m.OsLimitObject;
     }), Promise.all([
-      h(a, {
-        rootName: "ScriptData",
-        headless: !0,
-        renderOpts: { pretty: !0, indent: "  ", newline: `\r
+      h(
+        a,
+        {
+          rootName: "ScriptData",
+          headless: !0,
+          renderOpts: { pretty: !0, indent: "  ", newline: `\r
 ` }
-      }, !0),
-      h(i, {
-        rootName: "LicenseData",
-        headless: !0,
-        renderOpts: { pretty: !0, indent: "  ", newline: `\r
+        },
+        !0
+      ),
+      h(
+        i,
+        {
+          rootName: "LicenseData",
+          headless: !0,
+          renderOpts: { pretty: !0, indent: "  ", newline: `\r
 ` }
-      }, !0)
+        },
+        !0
+      )
     ]).then(([m, s]) => (t.NewDataSet.Table.ScriptData = m, t.NewDataSet.Table.LicenseData = s, t));
   });
 }
@@ -6106,12 +5823,14 @@ function te(e) {
   });
 }
 function ae(e) {
-  return new Promise((t, a) => typeof e == "string" ? y(e).then((i) => t(i)) : t(e)).then((t) => d({
-    PackedScript: t.PackedScript,
-    handler: te,
-    result: [],
-    promiseHandler: z
-  }));
+  return new Promise((t, a) => typeof e == "string" ? y(e).then((i) => t(i)) : t(e)).then(
+    (t) => d({
+      PackedScript: t.PackedScript,
+      handler: te,
+      result: [],
+      promiseHandler: z
+    })
+  );
 }
 const oe = {
   constants: D,

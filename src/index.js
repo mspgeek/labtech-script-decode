@@ -2,7 +2,6 @@
  * Created by kgrube on 10/13/2017
  */
 
-
 /**
  * @module labtechScriptDecode
  */
@@ -133,13 +132,13 @@
  * @property ParentID
  */
 
-import {decode, decodeXML, encode, encodeXML, interpolateScriptData, toText} from './script.js';
+import { decode, decodeXML, encode, encodeXML, interpolateScriptData, toText } from './script.js'
 /**
  * @type {Constants}
  */
-import constants from './constants.js';
+import constants from './constants.js'
 
-import {functionTemplates, getFunctionLineDescription} from './functions.js';
+import { functionTemplates, getFunctionLineDescription } from './functions.js'
 
 export {
   constants,
@@ -151,9 +150,16 @@ export {
   functionTemplates,
   getFunctionLineDescription,
   toText,
-};
+}
 
 export default {
-  constants, decode, decodeXML, interpolate: interpolateScriptData, encode, encodeXML,
-  functionTemplates, getFunctionLineDescription, toText,
-};
+  constants,
+  decode,
+  decodeXML,
+  interpolate: interpolateScriptData,
+  encode,
+  encodeXML,
+  functionTemplates,
+  getFunctionLineDescription,
+  toText,
+}
