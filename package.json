@@ -18,7 +18,12 @@
     "build": "vite build && vite build --config vite.config.umd.js",
     "test": "vitest run",
     "test:watch": "vitest",
-    "docs": "node docs/generate > DOC.md"
+    "docs": "node docs/generate > DOC.md",
+    "prepare": "husky || true",
+    "format": "prettier --write .",
+    "lint": "npm run format && eslint .",
+    "lint:check": "eslint .",
+    "coverage": "vitest run --coverage"
   },
   "main": "./dist/labtech-script-decode.cjs",
   "module": "./dist/labtech-script-decode.js",
@@ -47,7 +52,12 @@
     "node": ">=20.19.0"
   },
   "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "eslint": "10.7.0",
+    "eslint-config-prettier": "9.1.2",
+    "husky": "9.1.7",
     "jsdoc": "4.0.4",
+    "prettier": "3.9.5",
     "vite": "7.3.6",
     "vite-plugin-node-polyfills": "0.28.0",
     "vitest": "3.2.7"

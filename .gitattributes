@@ -1,0 +1,18 @@
+# normalize all text files to LF in the repo, regardless of OS checkout.
+# silences the "LF will be replaced by CRLF" warnings on Windows.
+* text=auto eol=lf
+# ensure shell scripts keep LF endings and executable bit
+*.sh text eol=lf
+
+# explicit binary types (no text normalization)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
