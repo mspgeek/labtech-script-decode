@@ -135,14 +135,17 @@
 [Resend Software](#resend-software)  
 [Resend System Information](#resend-system-information)  
 [Script Call](#script-call)  
+[Script Exit](#script-exit)  
 [Script Exit with Error](#script-exit-with-error)  
 [Script For Each](#script-for-each)  
 [Script For Each SQL](#script-for-each-sql)  
 [Script Goto](#script-goto)  
+[Script Label](#script-label)  
 [Script Log Message](#script-log-message)  
 [Script Math](#script-math)  
 [Script Note](#script-note)  
 [Script RegEx](#script-regex)  
+[Script Resume State](#script-resume-state)  
 [Script Return](#script-return)  
 [Script Run](#script-run)  
 [Script Sleep](#script-sleep)  
@@ -1307,14 +1310,14 @@ IF PATCH INSTALLED HotFixId 5c9e30a9-9015-44a4-9be9-94d6b8fac949 THEN Jump to :L
         
         
 ### IF Plugin Agent Command Available
-Checks if a Plugin is loaded and enabled for use.
+Checks if a Plugin Command is loaded and enabled for use.
 
 **Parameters**
 
 | Param | Values | Note |
 | --- | --- | --- |
-| Command ID | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
-| Label to Jump to or Steps to Skip | _User Provided_ | undefined |
+| Command ID | _User Provided_ | Plugin Command |
+| Label to Jump to or Steps to Skip | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
 
 **Example Function Text**
 ```        
@@ -1327,14 +1330,14 @@ IF SvcCommandId 1049 Agent Command Available THEN Jump to line :Label1315
         
         
 ### IF Plugin Enabled
-Checks to see if PlPlugin Name to Check.
+Checks to see if a Plugin is enabled.
 
 **Parameters**
 
 | Param | Values | Note |
 | --- | --- | --- |
-| GUID | Values loaded from database  | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
-| Label to Jump to or Steps to Skip | _User Provided_ | undefined |
+| GUID | Values loaded from database  | undefined |
+| Label to Jump to or Steps to Skip | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
 
 **Example Function Text**
 ```        
@@ -1353,8 +1356,8 @@ Checks if a Plugin Function Exists and is ready for use.
 
 | Param | Values | Note |
 | --- | --- | --- |
-| Function Guid | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
-| Label to Jump to or Steps to Skip | _User Provided_ | undefined |
+| Function | _User Provided_ | Plugin Server Function |
+| Label to Jump to or Steps to Skip | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
 
 **Example Function Text**
 ```        
@@ -2017,7 +2020,8 @@ Clears Maintenance mode for the selected computer.
 
 | Param | Values | Note |
 | --- | --- | --- |
-| ComputerID | _User Provided_ | undefined |
+| ComputerID | _User Provided_ | Selected Computer |
+| Maintenance Mode Entry ID | _User Provided_ | Leave blank to clear all maintenance modes. Use a number or variable to indicate a specific record. |
 
 **Example Function Text**
 ```        
@@ -2030,7 +2034,7 @@ Clear Maintenance Mode for @computerid@
         
         
 ### Maintenance Mode Start
-Sets Maintenance mode for the selected computer.
+Sets Maintenance mode for the selected computer and saves the maintenance mode record id to %maintenancemodeid%.
 
 **Parameters**
 
@@ -2383,7 +2387,7 @@ Executes an Agent Plugin Command and returns the results to %PluginCommandResult
 
 | Param | Values | Note |
 | --- | --- | --- |
-| Command ID | _User Provided_ | The Command to Execute |
+| Command | _User Provided_ | The Command to Execute |
 | Parameters | _User Provided_ | undefined |
 
 **Example Function Text**
@@ -3010,6 +3014,25 @@ Call: :Label
 ---
         
         
+### Script Exit
+Exits the script with a success result.
+
+**Parameters**
+
+| Param | Values | Note |
+| --- | --- | --- |
+
+
+**Example Function Text**
+```        
+Exit Script
+```
+
+
+
+---
+        
+        
 ### Script Exit with Error
 Exits the script and sets the failure status in the logs, All normal script exits and ends exit with success status.
 
@@ -3093,6 +3116,25 @@ GOTO: :Label
 ---
         
         
+### Script Label
+Creates a label used as a script flow target.
+
+**Parameters**
+
+| Param | Values | Note |
+| --- | --- | --- |
+| Label Name | _User Provided_ | The name of the label. |
+
+**Example Function Text**
+```        
+:NewScriptLabelFunction - Label
+```
+
+
+
+---
+        
+        
 ### Script Log Message
 Writes an informational entry to the script log.
 
@@ -3156,6 +3198,11 @@ Adds a remark to the script and will not be executed.
 ```        
 Note: NOTE TEXT @NOTETEXT@
 :CustomLabel - Label
+Note: New Script Label Function
+Note: New Script Exit Function
+Note: Set Script Resume State to Disabled
+Note: Set Script Resume State to this step
+Note: Set Script Resume State to last successful script step
 ```
 
 
@@ -3177,6 +3224,27 @@ Performs regular expression parsing for the given value and stores the result in
 **Example Function Text**
 ```        
 SET: @RESULTSVAR@ = MATCH(@VALUE@ PATTERN @PATTERN@)
+```
+
+
+
+---
+        
+        
+### Script Resume State
+Set Script Resume State or Disable Resume if the script engine is restarted.
+
+**Parameters**
+
+| Param | Values | Note |
+| --- | --- | --- |
+| Resume State | _User Provided_ | Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last executed script step. |
+
+**Example Function Text**
+```        
+Script Resume State: Resume disabled
+Script Resume State: Resume from this step
+Script Resume State: Resume from last executed script step
 ```
 
 
@@ -3215,8 +3283,8 @@ Start a new script, all variables are passed to new script. If script fails then
 
 **Example Function Text**
 ```        
-Run Script: c7a65c93-eadc-11e1-bca6-7ec667b1402e in Minutes: @DELAY@
-Run Script: c7a65c93-eadc-11e1-bca6-7ec667b1402e
+Run Script: Add Reflexion Monitoring in Minutes: @DELAY@
+Run Script: Add Reflexion Monitoring
 ```
 
 
@@ -3720,10 +3788,11 @@ Send unencrypted data to a device that has an open SSH connection. The response 
 | --- | --- | --- |
 | SSH Session ID | _User Provided_ | Session ID of the open SSH connection. |
 | Text To Send | _User Provided_ | Text to send to the device. |
+| Line Ending | [Non-Unix, Unix]  | Line ending to use (Non-Unix = CRLF, Unix = LF). |
 
 **Example Function Text**
 ```        
-SSH Send: @TEXT@ unencrypted to SSH session ID: %sshsessionid%
+SSH send "@TEXT@" unencrypted to SSH session ID: %sshsessionid%
 ```
 
 
@@ -3740,10 +3809,11 @@ Send encrypted data to a device that has an open SSH connection. The response is
 | --- | --- | --- |
 | SSH Session ID | _User Provided_ | Session ID of the open SSH connection. |
 | Text To Send | _User Provided_ | Text to send to the device. |
+| Line Ending | [Non-Unix, Unix]  | Line ending to use (Non-Unix = CRLF, Unix = LF). |
 
 **Example Function Text**
 ```        
-SSH Send: @TEXT@ encrypted to SSH session ID: %sshsessionid%
+SSH send "@TEXT@" encrypted to SSH session ID: %sshsessionid%
 ```
 
 
@@ -3819,10 +3889,11 @@ Send unencrypted data to a device that has an open Telnet connection. The respon
 | --- | --- | --- |
 | Telnet Session ID | _User Provided_ | Session ID of the open Telnet connection. |
 | Text To Send | _User Provided_ | Text to send to the device. |
+| Line Ending | [Non-Unix, Unix]  | Line ending to use (Non-Unix = CRLF, Unix = LF). |
 
 **Example Function Text**
 ```        
-Telnet Send To: @TEXT@ unencrypted to Telnet session ID: %telnetsessionid%
+Telnet send "@TEXT@" unencrypted to Telnet session ID: %telnetsessionid%
 ```
 
 
@@ -3839,10 +3910,11 @@ Send encrypted data to a device that has an open Telnet connection. The response
 | --- | --- | --- |
 | Telnet Session ID | _User Provided_ | Session ID of the open Telnet connection. |
 | Text To Send | _User Provided_ | Text to send to the device. |
+| Line Ending | [Non-Unix, Unix]  | Line ending to use (Non-Unix = CRLF, Unix = LF). |
 
 **Example Function Text**
 ```        
-Telnet Send To: @TEXT@ encrypted to Telnet session ID: %telnetsessionid%
+Telnet send "@TEXT@" encrypted to Telnet session ID: %telnetsessionid%
 ```
 
 
@@ -4151,33 +4223,6 @@ Tool Remove: AppID=@INPUTPARAMETER@
         
         
 ### Variable Check
-Compares a variable to the specified data and skips if the result is TRUE.
-
-**Parameters**
-
-| Param | Values | Note |
-| --- | --- | --- |
-| Variable Name | _User Provided_ | Enter variable name without % or @. Script will attempt to use %variablename%, if no match is found it will attempt to use @variablename@. |
-| Compare | [Exists, Not Exists, =, Not =, <, <=, >, >=, Contains, Not Contains, In, Not In]  | Logical Operator. |
-| To | _User Provided_ | Value to compare to. |
-| Label to Jump to or Steps to Skip | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. |
-
-**Example Function Text**
-```        
-IF VARIABLENAME@ < @COMPAREVALUE@ THEN Jump to line 142
-IF @VARIABLENAME@ = @COMPAREVAR@ THEN Jump to :Label
-IF @VARIABLENAME@ Contains @COMPAREVAR@ THEN Jump to :Label
-IF @VARIABLENAME@ Not Contains @COMPAREVAR@ THEN Jump to :Label
-IF @VARIABLENAME@ In @COMPAREVAR@ THEN Jump to :Label
-IF @VARIABLENAME@ Not In @COMPAREVAR@ THEN Jump to :Label
-```
-
-
-
----
-        
-        
-### Variable Check
 Runs the THEN if the condition is true.
 
 **Parameters**
@@ -4191,6 +4236,33 @@ Runs the THEN if the condition is true.
 **Example Function Text**
 ```        
 If Variable Check
+```
+
+
+
+---
+        
+        
+### Variable Check
+Compares a variable to the specified data and skips if the result is TRUE.
+
+**Parameters**
+
+| Param | Values | Note |
+| --- | --- | --- |
+| Variable Name | _User Provided_ | Enter variable name without % or @. Script will attempt to use %variablename%, if no match is found it will attempt to use @variablename@. |
+| Compare | [Exists, Not Exists, =, Not =, <, <=, >, >=, Contains, Not Contains, In, Not In]  | Logical Operator. |
+| To | _User Provided_ | Value to compare to. |
+| Label to Jump to or Steps to Skip | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. |
+
+**Example Function Text**
+```        
+IF @VARIABLENAME@ < @COMPAREVALUE@ THEN Jump to line 142
+IF @VARIABLENAME@ = @COMPAREVAR@ THEN Jump to :Label
+IF @VARIABLENAME@ Contains @COMPAREVAR@ THEN Jump to :Label
+IF @VARIABLENAME@ Not Contains @COMPAREVAR@ THEN Jump to :Label
+IF @VARIABLENAME@ In @COMPAREVAR@ THEN Jump to :Label
+IF @VARIABLENAME@ Not In @COMPAREVAR@ THEN Jump to :Label
 ```
 
 

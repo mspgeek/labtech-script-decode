@@ -7,8 +7,6 @@
   },
   "sourceType": "module",
   "source": {
-    "include": [
-      "lib"
-    ]
+    "include": ["lib"]
   }
 }

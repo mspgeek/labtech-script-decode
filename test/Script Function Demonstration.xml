@@ -1,0 +1,37 @@
+﻿<LabTech_Expansion
+	Version="250.436"
+	Name="LabTech Script Expansion"
+	Type="PackedScript">
+	<PackedScript>
+		<NewDataSet>
+			<Table>
+				<ScriptId>1303</ScriptId>
+				<FolderId>105</FolderId>
+				<ScriptName>Script Function Demonstration</ScriptName>
+				<ScriptNotes></ScriptNotes>
+				<Permission>0,</Permission>
+				<EditPermission>0,</EditPermission>
+				<ComputerScript>1</ComputerScript>
+				<LocationScript>0</LocationScript>
+				<MaintenanceScript>0</MaintenanceScript>
+				<FunctionScript>0</FunctionScript>
+				<LicenseData>H4sIAAAAAAAEAFWPzQrCMBCE74LvkAdoyE+1NmUJiIogetHiPTQbCEha0gbs20uLQj0NszPfwsDVNxh6PJrBaKjHDrUANivcUzi0KQwYNQe2cHB6dz5ODOo6YW/NmJFLeo1ElhmRXBZEyGorqo0i+xuwRR0eTfTd8MTY+zZMf/8P3/ycvNUGSyu4K2hphKNCOEFVnivKOW+kMsbsrPvxMwBsuWa9+gAnhvov3QAAAA==</LicenseData>
+				<ScriptData>H4sIAAAAAAAEAO2YXW+CMBSG75fsP/QPGCj4xWJINr9iYtTIsvsKJTar1NCS+fNXoLhqNq7sDGxX9j2nHE+fvKkHR0GYkqOYIIH8xwcARqXmhZByehIpyrMzgmnEgVUlNihFByxwqsXmlO0Q1QJlsTe5ibDEhyPrMnCxa56RyEd4GEE77neGCMYdCGPY8VzX69i2HToeQmgQxVWV4oGiZ0tvWpULBD6eT/EcCtWAWqn4LEsKvYjynKb0Q8KrQztX2r3S3Svd03iwVPi27Df/VLExSwRJMpzHz2uVW/MlOZDikWqpMoskwolAxWFkVpc6ki8KNVicOiyu9zMYf00jEIR7xihYMYGtJdphOrJU9h/at9CeJLUSWlk9J1dtNsIO3podvBu7Ff4AZV1QeA0YBec0yXROb1hnOkmurFtwM4rNbY/ftAtO2W7OBAO29UJR8m6EXrdJpoNODb0b/2722mMr7Rqbnogwe4v1m2Qop/d7hhq0x1ABFpWhtphnBwwC2QQG8q6aEI52FEdGvDVslrcGNQhtI4C8P+ExsScccPltZubXRg3/9S6DZgi1aMSvsRlFXACehSHmPM4o4OU2c8Zr2AtAnfEcM4RaNOtPVxOwnoFgvF1sXs3QusdsX2n1F98nrdMjAPETAAA=</ScriptData>
+				<ScriptVersion>1</ScriptVersion>
+				<ScriptGuid>ae8d10f6-8a1f-11f1-9339-000c29aaa7df</ScriptGuid>
+				<ScriptFlags>0</ScriptFlags>
+				<Parameters></Parameters>
+			</Table>
+		</NewDataSet>
+		<ScriptFolder>
+			<NewDataSet>
+				<Table>
+					<FolderID>105</FolderID>
+					<ParentID>0</ParentID>
+					<Name>__Examples</Name>
+					<GUID>3a28e85b-3064-4911-98cf-fd641ca4bc2b</GUID>
+				</Table>
+			</NewDataSet>
+		</ScriptFolder>
+	</PackedScript>
+</LabTech_Expansion>
