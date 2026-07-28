@@ -62,20 +62,20 @@ describe('function definitions 257-259', () => {
   it('interpolates steps using the new definitions', () => {
     const [resume, label, exit] = interpolateSteps([
       makeStep(257, { Param1: 2 }),
-      makeStep(258, { Param1: 'Cleanup', Sort: 1 }),
+      makeStep(258, { Param1: ':Cleanup', Sort: 1 }),
       makeStep(259, { Sort: 2 }),
     ])
-    expect(resume.StepDescription).toBe('Set Resume State: Resume from last successful step')
-    expect(label.StepDescription).toBe('Label: Cleanup')
-    expect(exit.StepDescription).toBe('Exit Script with Success')
+    expect(resume.StepDescription).toBe('Script Resume State: Resume from last successful script step')
+    expect(label.StepDescription).toBe(':Cleanup - Label')
+    expect(exit.StepDescription).toBe('Exit Script')
   })
 
   it('renders resume state variants', () => {
     expect(getFunctionLineDescription(interpolateSteps([makeStep(257, { Param1: 0 })])[0])).toBe(
-      'Set Resume State: Resume disabled',
+      'Script Resume State: Resume disabled',
     )
     expect(getFunctionLineDescription(interpolateSteps([makeStep(257, { Param1: 1 })])[0])).toBe(
-      'Set Resume State: Resume from this step',
+      'Script Resume State: Resume from this step',
     )
   })
 })

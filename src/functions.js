@@ -860,14 +860,15 @@ functionTemplates[252] = (p1, p2, p3, p4) => {
 }
 functionTemplates[257] = (p1) => {
   if (p1 === 1) {
-    return 'Set Resume State: Resume from this step'
+    return 'Script Resume State: Resume from this step'
   }
   if (p1 === 2) {
-    return 'Set Resume State: Resume from last successful step'
+    return 'Script Resume State: Resume from last successful script step'
   }
-  return 'Set Resume State: Resume disabled'
+  return 'Script Resume State: Resume disabled'
 }
-functionTemplates[258] = (p1) => `Label: ${p1}`
-functionTemplates[259] = () => 'Exit Script with Success'
+// editor renders labels as `:name - Label`
+functionTemplates[258] = (p1) => `${p1} - Label`
+functionTemplates[259] = () => 'Exit Script'
 
 export { getFunctionLineDescription, functionTemplates }

@@ -7,6 +7,8 @@ import decode from '../src/index.js'
 const fixturesDir = dirname(fileURLToPath(import.meta.url))
 const exportTestXML = readFileSync(join(fixturesDir, 'Export Test.xml'), 'utf8')
 const hellScriptXML = readFileSync(join(fixturesDir, 'Hell Script v2.xml'), 'utf8')
+// exported from Automate 250.436, exercises functions 257/258/259
+const demoXML = readFileSync(join(fixturesDir, 'Script Function Demonstration.xml'), 'utf8')
 
 describe('decodeXML', () => {
   it('decodes Export Test.xml', async () => {
@@ -30,6 +32,37 @@ describe('decodeXML', () => {
     const baseline = JSON.parse(readFileSync(join(fixturesDir, 'Export Test.json'), 'utf8'))
     const result = await decode.decodeXML(exportTestXML)
     expect(result).toEqual(baseline)
+  })
+})
+
+describe('Script Function Demonstration.xml (Automate 250.436)', () => {
+  it('decodes with the same structure as the 2017 exports', async () => {
+    const result = await decode.decodeXML(demoXML)
+    const { Table } = result.PackedScript.NewDataSet
+    expect(Table.ScriptName).toBe('Script Function Demonstration')
+    expect(Table.ScriptId).toBe(1303)
+    const ids = Table.ScriptData.ScriptSteps.map((s) => s.FunctionId)
+    expect(ids).toContain(257)
+    expect(ids).toContain(258)
+    expect(ids).toContain(259)
+    expect(result).toMatchSnapshot()
+  })
+
+  it('interpolates 257-259 to the editor display text', async () => {
+    const result = await decode.decodeXML(demoXML)
+    const bySort = decode.interpolate(result.PackedScript).NewDataSet.Table.ScriptData.ScriptSteps
+    const text = bySort.map((s) => s.StepDescription)
+    expect(text).toContain(':NewScriptLabelFunction - Label')
+    expect(text).toContain('Exit Script')
+    expect(text).toContain('Script Resume State: Resume disabled')
+    expect(text).toContain('Script Resume State: Resume from this step')
+    expect(text).toContain('Script Resume State: Resume from last successful script step')
+  })
+
+  it('round-trips stably', async () => {
+    const encoded1 = await decode.encodeXML(await decode.decodeXML(demoXML))
+    const encoded2 = await decode.encodeXML(await decode.decodeXML(encoded1))
+    expect(encoded2).toBe(encoded1)
   })
 })
 

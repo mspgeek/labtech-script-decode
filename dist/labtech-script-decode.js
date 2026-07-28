@@ -5673,9 +5673,9 @@ r[249] = (e, t) => `Telnet Send: "${t}" unencrypted to SSH session id: ${e}`;
 r[250] = (e, t) => `Telnet Send: "${t}" encrypted to SSH session id: ${e}`;
 r[251] = (e) => `FOR each computer associated with Contact run script ScriptId ${e}`;
 r[252] = (e, t, a, i) => Number.isInteger(e) && Number.isInteger(t) ? `Create New Ticket: for ClientId ${e}\\NetworkDeviceId ${t} Email: ${a} Subject: ${i}` : Number.isInteger(e) ? `Create New Ticket: for ClientId ${e}\\${t} Email: ${a} Subject: ${i}` : Number.isInteger(t) ? `Create New Ticket: for ${e}\\NetworkDeviceId ${t} Email: ${a} Subject: ${i}` : `Create New Ticket: for ${e}\\${t} Email: ${a} Subject: ${i}`;
-r[257] = (e) => e === 1 ? "Set Resume State: Resume from this step" : e === 2 ? "Set Resume State: Resume from last successful step" : "Set Resume State: Resume disabled";
-r[258] = (e) => `Label: ${e}`;
-r[259] = () => "Exit Script with Success";
+r[257] = (e) => e === 1 ? "Script Resume State: Resume from this step" : e === 2 ? "Script Resume State: Resume from last successful script step" : "Script Resume State: Resume disabled";
+r[258] = (e) => `${e} - Label`;
+r[259] = () => "Exit Script";
 const g = P.parseString, { Actions: B, OsLimits: j, Continues: _, FunctionFlags: J, FunctionTypes: q, Functions: T } = D;
 function I(e) {
   return isNaN(e) || (e % 1 === 0 ? e = e.includes("0x") ? e : parseInt(e, 10) : e = parseFloat(e)), e;
