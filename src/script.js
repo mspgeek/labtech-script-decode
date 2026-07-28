@@ -161,6 +161,7 @@ function decodeXML(scriptXML) {
         promiseHandler: traversePromiseHandler,
       })
     })
+    .then((LabTech_Expansion) => resolveBundledScriptNames(LabTech_Expansion))
     .then((LabTech_Expansion) => {
       const valid = validate(LabTech_Expansion)
       if (valid) {
@@ -168,6 +169,47 @@ function decodeXML(scriptXML) {
       }
       throw validate.errors
     })
+}
+
+/**
+ * Run Script steps reference bundled scripts by guid, show the bundled script's name instead
+ * @param LabTech_Expansion
+ * @returns LabTech_Expansion
+ */
+function resolveBundledScriptNames(LabTech_Expansion) {
+  const tables = []
+  function walk(packed) {
+    if (!packed) {
+      return
+    }
+    if (Array.isArray(packed)) {
+      packed.forEach(walk)
+      return
+    }
+    if (packed.PackedScript) {
+      walk(packed.PackedScript)
+    }
+    if (packed.NewDataSet) {
+      tables.push(packed.NewDataSet.Table)
+    }
+  }
+  walk(LabTech_Expansion.PackedScript)
+
+  const names = {}
+  tables.forEach((table) => {
+    names[table.ScriptGuid] = table.ScriptName
+  })
+
+  tables.forEach((table) => {
+    table.ScriptData.ScriptSteps.forEach((step) => {
+      if (step.FunctionId === 17 && names[step.Param1]) {
+        // Param1 keeps the guid so encoding round-trips, only the description shows the name
+        step.StepDescription = getFunctionLineDescription(Object.assign({}, step, { Param1: names[step.Param1] }))
+      }
+    })
+  })
+
+  return LabTech_Expansion
 }
 
 /**
