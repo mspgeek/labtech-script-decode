@@ -26,6 +26,18 @@ describe('decodeXML', () => {
     expect(result).toMatchSnapshot()
   })
 
+  it('shows bundled script names in run script steps', async () => {
+    const result = await decode.decodeXML(hellScriptXML)
+    const steps = result.PackedScript.NewDataSet.Table.ScriptData.ScriptSteps
+    const runSteps = steps.filter((s) => s.FunctionId === 17)
+    expect(runSteps.length).toBeGreaterThan(0)
+    for (const step of runSteps) {
+      // Param1 keeps the guid, description resolves it to the bundled script's name
+      expect(step.Param1).toBe('c7a65c93-eadc-11e1-bca6-7ec667b1402e')
+      expect(step.StepDescription).toContain('Run Script: Add Reflexion Monitoring')
+    }
+  })
+
   it('matches the historical baseline Export Test.json', async () => {
     // known good-ish baseline captured from the original tooling (had some
     // unfixed export issues, see plan notes), catches drift snapshots cannot

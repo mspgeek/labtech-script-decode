@@ -42,7 +42,10 @@ const constants = {
     26: 'Windows 2012 Server R2',
     27: 'Windows 10 Class (2016 or 10)',
     28: 'Windows 10',
-    29: 'Windows 2016 Server',
+    29: 'Windows Server 2016',
+    30: 'Windows Server 2019',
+    31: 'Windows 11',
+    32: 'Windows Server 2022',
     '-2147483648': 'Function disabled',
     '-2147483647': 'Function disabled - Windows 2000',
     '-2147483646': 'Function disabled - Windows NT4',
@@ -72,7 +75,10 @@ const constants = {
     '-2147483622': 'Function disabled - Windows 2012 Server R2',
     '-2147483621': 'Function disabled - Windows 10 Class (2016 or 10)',
     '-2147483620': 'Function disabled - Windows 10',
-    '-2147483619': 'Function disabled - Windows 2016 Server',
+    '-2147483619': 'Function disabled - Windows Server 2016',
+    '-2147483618': 'Function disabled - Windows Server 2019',
+    '-2147483617': 'Function disabled - Windows 11',
+    '-2147483616': 'Function disabled - Windows Server 2022',
   },
   Actions: {
     1: 'InitialCheck',
@@ -3474,7 +3480,7 @@ const constants = {
     174: {
       FunctionId: 174,
       Name: 'Telnet Send Raw',
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -3484,6 +3490,11 @@ const constants = {
         {
           Description: 'Text to send to the device.',
           ParamName: 'Text To Send',
+        },
+        {
+          Description: 'Line ending to use (Non-Unix = CRLF, Unix = LF).',
+          ParamName: 'Line Ending',
+          Values: ['Non-Unix', 'Unix'],
         },
       ],
       Description:
@@ -3493,7 +3504,7 @@ const constants = {
     175: {
       FunctionId: 175,
       Name: 'Telnet Send Secure',
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -3503,6 +3514,11 @@ const constants = {
         {
           Description: 'Text to send to the device.',
           ParamName: 'Text To Send',
+        },
+        {
+          Description: 'Line ending to use (Non-Unix = CRLF, Unix = LF).',
+          ParamName: 'Line Ending',
+          Values: ['Non-Unix', 'Unix'],
         },
       ],
       Description:
@@ -3558,7 +3574,7 @@ const constants = {
     178: {
       FunctionId: 178,
       Name: 'SSH Send Raw',
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -3568,6 +3584,11 @@ const constants = {
         {
           Description: 'Text to send to the device.',
           ParamName: 'Text To Send',
+        },
+        {
+          Description: 'Line ending to use (Non-Unix = CRLF, Unix = LF).',
+          ParamName: 'Line Ending',
+          Values: ['Non-Unix', 'Unix'],
         },
       ],
       Description:
@@ -3577,7 +3598,7 @@ const constants = {
     179: {
       FunctionId: 179,
       Name: 'SSH Send Secure',
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -3587,6 +3608,11 @@ const constants = {
         {
           Description: 'Text to send to the device.',
           ParamName: 'Text To Send',
+        },
+        {
+          Description: 'Line ending to use (Non-Unix = CRLF, Unix = LF).',
+          ParamName: 'Line Ending',
+          Values: ['Non-Unix', 'Unix'],
         },
       ],
       Description:
@@ -4346,7 +4372,7 @@ const constants = {
       ParamNames: [
         {
           Description: 'The Command to Execute',
-          ParamName: 'Command ID',
+          ParamName: 'Command',
         },
         {
           ParamName: 'Parameters',
@@ -4364,14 +4390,14 @@ const constants = {
         {
           ParamName: 'GUID',
           Values: ['Select CONVERT(CONCAT(Name,CHAR(0),GUID) using UTF8) From Plugins Order By Name'],
-          Description:
-            "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
         },
         {
           ParamName: 'Label to Jump to or Steps to Skip',
+          Description:
+            "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
         },
       ],
-      Description: 'Checks to see if PlPlugin Name to Check.',
+      Description: 'Checks to see if a Plugin is enabled.',
       FunctionFlag: 1,
     },
     226: {
@@ -4381,15 +4407,16 @@ const constants = {
       FunctionType: 2,
       ParamNames: [
         {
-          Description:
-            "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
+          Description: 'Plugin Command',
           ParamName: 'Command ID',
         },
         {
           ParamName: 'Label to Jump to or Steps to Skip',
+          Description:
+            "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
         },
       ],
-      Description: 'Checks if a Plugin is loaded and enabled for use.',
+      Description: 'Checks if a Plugin Command is loaded and enabled for use.',
       FunctionFlag: 1,
     },
     227: {
@@ -4399,12 +4426,13 @@ const constants = {
       FunctionType: 2,
       ParamNames: [
         {
-          Description:
-            "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
-          ParamName: 'Function Guid',
+          Description: 'Plugin Server Function',
+          ParamName: 'Function',
         },
         {
           ParamName: 'Label to Jump to or Steps to Skip',
+          Description:
+            "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
         },
       ],
       Description: 'Checks if a Plugin Function Exists and is ready for use.',
@@ -4425,17 +4453,24 @@ const constants = {
           ParamName: 'Duration',
         },
       ],
-      Description: 'Sets Maintenance mode for the selected computer.',
+      Description:
+        'Sets Maintenance mode for the selected computer and saves the maintenance mode record id to %maintenancemodeid%.',
       FunctionFlag: 2,
     },
     229: {
       FunctionId: 229,
       Name: 'Maintenance Mode Clear',
-      Parameters: 1,
+      Parameters: 2,
       FunctionType: 2,
       ParamNames: [
         {
+          Description: 'Selected Computer',
           ParamName: 'ComputerID',
+        },
+        {
+          Description:
+            'Leave blank to clear all maintenance modes. Use a number or variable to indicate a specific record.',
+          ParamName: 'Maintenance Mode Entry ID',
         },
       ],
       Description: 'Clears Maintenance mode for the selected computer.',
@@ -4583,7 +4618,7 @@ const constants = {
     },
     240: {
       FunctionId: 240,
-      Name: 'Check Connnectivity',
+      Name: 'Check Connectivity',
       Parameters: 0,
       FunctionType: 2,
       ParamNames: [],
@@ -4684,7 +4719,7 @@ const constants = {
     245: {
       FunctionId: 245,
       Name: 'SSH Send Raw',
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -4694,6 +4729,11 @@ const constants = {
         {
           Description: 'Text to send to the device.',
           ParamName: 'Text To Send',
+        },
+        {
+          Description: 'Line ending to use (Non-Unix = CRLF, Unix = LF).',
+          ParamName: 'Line Ending',
+          Values: ['Non-Unix', 'Unix'],
         },
       ],
       Description:
@@ -4703,7 +4743,7 @@ const constants = {
     246: {
       FunctionId: 246,
       Name: 'SSH Send Secure',
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -4713,6 +4753,11 @@ const constants = {
         {
           Description: 'Text to send to the device.',
           ParamName: 'Text To Send',
+        },
+        {
+          Description: 'Line ending to use (Non-Unix = CRLF, Unix = LF).',
+          ParamName: 'Line Ending',
+          Values: ['Non-Unix', 'Unix'],
         },
       ],
       Description:
@@ -4756,7 +4801,7 @@ const constants = {
     249: {
       FunctionId: 249,
       Name: 'Telnet Send Raw',
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -4766,6 +4811,11 @@ const constants = {
         {
           Description: 'Text to send to the device.',
           ParamName: 'Text To Send',
+        },
+        {
+          Description: 'Line ending to use (Non-Unix = CRLF, Unix = LF).',
+          ParamName: 'Line Ending',
+          Values: ['Non-Unix', 'Unix'],
         },
       ],
       Description:
@@ -4775,7 +4825,7 @@ const constants = {
     250: {
       FunctionId: 250,
       Name: 'Telnet Send Secure',
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -4785,6 +4835,11 @@ const constants = {
         {
           Description: 'Text to send to the device.',
           ParamName: 'Text To Send',
+        },
+        {
+          Description: 'Line ending to use (Non-Unix = CRLF, Unix = LF).',
+          ParamName: 'Line Ending',
+          Values: ['Non-Unix', 'Unix'],
         },
       ],
       Description:

@@ -682,12 +682,12 @@ functionTemplates[171] = (p1, p2, p3, p4, p5) => {
 }
 functionTemplates[172] = (p1) => `SET: %sqlresult% = [${p1}]`
 functionTemplates[173] = (p1, p2, p3) => `Open Telnet To: "${p1}", Port: ${p2}, Timeout: ${p3}`
-functionTemplates[174] = (p1, p2) => `Telnet Send To: ${p2} unencrypted to Telnet session ID: ${p1}`
-functionTemplates[175] = (p1, p2) => `Telnet Send To: ${p2} encrypted to Telnet session ID: ${p1}`
+functionTemplates[174] = (p1, p2) => `Telnet send "${p2}" unencrypted to Telnet session ID: ${p1}`
+functionTemplates[175] = (p1, p2) => `Telnet send "${p2}" encrypted to Telnet session ID: ${p1}`
 functionTemplates[176] = (p1) => `Close Telnet session ID: ${p1}`
 functionTemplates[177] = (p1, p2, p3) => `Open SSH To: "${p1}", Port: ${p2}, Timeout: ${p3}`
-functionTemplates[178] = (p1, p2) => `SSH Send: ${p2} unencrypted to SSH session ID: ${p1}`
-functionTemplates[179] = (p1, p2) => `SSH Send: ${p2} encrypted to SSH session ID: ${p1}`
+functionTemplates[178] = (p1, p2) => `SSH send "${p2}" unencrypted to SSH session ID: ${p1}`
+functionTemplates[179] = (p1, p2) => `SSH send "${p2}" encrypted to SSH session ID: ${p1}`
 functionTemplates[180] = (p1) => `Close SSH Session ID: ${p1}`
 functionTemplates[181] = (p1, p2) => `LabTech Server Shell Execute: ${p1} ${p2}`
 functionTemplates[182] = (p1, p2) => `Download: ${p1} to LabTech Server, save as ${p2}`
@@ -839,12 +839,12 @@ functionTemplates[241] = (p1, p2) => `Get SNMP OID: ${p1} and storing it in ${p2
 functionTemplates[242] = (p1, _2, p3) => `SET: SNMP OID: ${p1} to ${p3}`
 functionTemplates[243] = (p1, p2) => `Open SSH to network device on Port: ${p1}, Timeout: ${p2}`
 functionTemplates[244] = (p1) => `Close SSH session ID: ${p1}`
-functionTemplates[245] = (p1, p2) => `SSH send: "${p2}" unencrypted to SSH session id: ${p1}`
-functionTemplates[246] = (p1, p2) => `SSH send: "${p2}" encrypted to SSH session id: ${p1}`
+functionTemplates[245] = (p1, p2) => `SSH send "${p2}" unencrypted to SSH session ID: ${p1}`
+functionTemplates[246] = (p1, p2) => `SSH send "${p2}" encrypted to SSH session ID: ${p1}`
 functionTemplates[247] = (p1, p2) => `Open Telnet to network device on Port: ${p1}, Timeout: ${p2}`
 functionTemplates[248] = (p1) => `Close Telnet session ID: ${p1}`
-functionTemplates[249] = (p1, p2) => `Telnet Send: "${p2}" unencrypted to SSH session id: ${p1}`
-functionTemplates[250] = (p1, p2) => `Telnet Send: "${p2}" encrypted to SSH session id: ${p1}`
+functionTemplates[249] = (p1, p2) => `Telnet send "${p2}" unencrypted to Telnet session ID: ${p1}`
+functionTemplates[250] = (p1, p2) => `Telnet send "${p2}" encrypted to Telnet session ID: ${p1}`
 functionTemplates[251] = (p1) => `FOR each computer associated with Contact run script ScriptId ${p1}`
 functionTemplates[252] = (p1, p2, p3, p4) => {
   if (Number.isInteger(p1) && Number.isInteger(p2)) {

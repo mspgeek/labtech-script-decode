@@ -2300,7 +2300,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "Param4": "",
               "Param5": "",
               "Sort": 30,
-              "StepDescription": "Run Script: c7a65c93-eadc-11e1-bca6-7ec667b1402e in Minutes: @DELAY@",
+              "StepDescription": "Run Script: Add Reflexion Monitoring in Minutes: @DELAY@",
             },
             {
               "Action": 2,
@@ -2340,7 +2340,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "Param4": "",
               "Param5": "",
               "Sort": 31,
-              "StepDescription": "Run Script: c7a65c93-eadc-11e1-bca6-7ec667b1402e",
+              "StepDescription": "Run Script: Add Reflexion Monitoring",
             },
             {
               "Action": 2,
@@ -13309,8 +13309,17 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                     "ParamName": "Text To Send",
                     "Value": "@TEXT@",
                   },
+                  {
+                    "Description": "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+                    "ParamName": "Line Ending",
+                    "Value": "",
+                    "Values": [
+                      "Non-Unix",
+                      "Unix",
+                    ],
+                  },
                 ],
-                "Parameters": 2,
+                "Parameters": 3,
               },
               "Indentation": 0,
               "OsLimit": 0,
@@ -13321,7 +13330,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "Param4": "",
               "Param5": "",
               "Sort": 266,
-              "StepDescription": "Telnet Send To: @TEXT@ unencrypted to Telnet session ID: %telnetsessionid%",
+              "StepDescription": "Telnet send "@TEXT@" unencrypted to Telnet session ID: %telnetsessionid%",
             },
             {
               "Action": 2,
@@ -13346,8 +13355,17 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                     "ParamName": "Text To Send",
                     "Value": "@TEXT@",
                   },
+                  {
+                    "Description": "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+                    "ParamName": "Line Ending",
+                    "Value": "",
+                    "Values": [
+                      "Non-Unix",
+                      "Unix",
+                    ],
+                  },
                 ],
-                "Parameters": 2,
+                "Parameters": 3,
               },
               "Indentation": 0,
               "OsLimit": 0,
@@ -13358,7 +13376,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "Param4": "",
               "Param5": "",
               "Sort": 267,
-              "StepDescription": "Telnet Send To: @TEXT@ encrypted to Telnet session ID: %telnetsessionid%",
+              "StepDescription": "Telnet send "@TEXT@" encrypted to Telnet session ID: %telnetsessionid%",
             },
             {
               "Action": 2,
@@ -13467,8 +13485,17 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                     "ParamName": "Text To Send",
                     "Value": "@TEXT@",
                   },
+                  {
+                    "Description": "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+                    "ParamName": "Line Ending",
+                    "Value": "",
+                    "Values": [
+                      "Non-Unix",
+                      "Unix",
+                    ],
+                  },
                 ],
-                "Parameters": 2,
+                "Parameters": 3,
               },
               "Indentation": 0,
               "OsLimit": 0,
@@ -13479,7 +13506,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "Param4": "",
               "Param5": "",
               "Sort": 270,
-              "StepDescription": "SSH Send: @TEXT@ unencrypted to SSH session ID: %sshsessionid%",
+              "StepDescription": "SSH send "@TEXT@" unencrypted to SSH session ID: %sshsessionid%",
             },
             {
               "Action": 2,
@@ -13504,8 +13531,17 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                     "ParamName": "Text To Send",
                     "Value": "@TEXT@",
                   },
+                  {
+                    "Description": "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+                    "ParamName": "Line Ending",
+                    "Value": "",
+                    "Values": [
+                      "Non-Unix",
+                      "Unix",
+                    ],
+                  },
                 ],
-                "Parameters": 2,
+                "Parameters": 3,
               },
               "Indentation": 0,
               "OsLimit": 0,
@@ -13516,7 +13552,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "Param4": "",
               "Param5": "",
               "Sort": 271,
-              "StepDescription": "SSH Send: @TEXT@ encrypted to SSH session ID: %sshsessionid%",
+              "StepDescription": "SSH send "@TEXT@" encrypted to SSH session ID: %sshsessionid%",
             },
             {
               "Action": 2,
@@ -15055,7 +15091,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                 "ParamNames": [
                   {
                     "Description": "The Command to Execute",
-                    "ParamName": "Command ID",
+                    "ParamName": "Command",
                     "Value": 1049,
                   },
                   {
@@ -15139,7 +15175,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                 "ParamNames": [
                   {
                     "Description": "The Command to Execute",
-                    "ParamName": "Command ID",
+                    "ParamName": "Command",
                     "Value": 1049,
                   },
                   {
@@ -15167,14 +15203,13 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "ContinueObject": "Exit on failure",
               "FunctionId": 225,
               "FunctionObject": {
-                "Description": "Checks to see if PlPlugin Name to Check.",
+                "Description": "Checks to see if a Plugin is enabled.",
                 "FunctionFlag": "Global",
                 "FunctionId": 225,
                 "FunctionType": "Function",
                 "Name": "IF Plugin Enabled",
                 "ParamNames": [
                   {
-                    "Description": "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
                     "ParamName": "GUID",
                     "Value": "24b84eb4-2104-11e1-b223-6e3ff20334fb",
                     "Values": [
@@ -15182,6 +15217,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                     ],
                   },
                   {
+                    "Description": "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
                     "ParamName": "Label to Jump to or Steps to Skip",
                     "Value": "",
                   },
@@ -15206,18 +15242,19 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "ContinueObject": "Exit on failure",
               "FunctionId": 226,
               "FunctionObject": {
-                "Description": "Checks if a Plugin is loaded and enabled for use.",
+                "Description": "Checks if a Plugin Command is loaded and enabled for use.",
                 "FunctionFlag": "Global",
                 "FunctionId": 226,
                 "FunctionType": "Function",
                 "Name": "IF Plugin Agent Command Available",
                 "ParamNames": [
                   {
-                    "Description": "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
+                    "Description": "Plugin Command",
                     "ParamName": "Command ID",
                     "Value": 1049,
                   },
                   {
+                    "Description": "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
                     "ParamName": "Label to Jump to or Steps to Skip",
                     "Value": ":Label",
                   },
@@ -15249,11 +15286,12 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                 "Name": "IF Plugin Server Function Available",
                 "ParamNames": [
                   {
-                    "Description": "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
-                    "ParamName": "Function Guid",
+                    "Description": "Plugin Server Function",
+                    "ParamName": "Function",
                     "Value": "ec90525e-9d73-11e4-bf92-005056844d96",
                   },
                   {
+                    "Description": "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
                     "ParamName": "Label to Jump to or Steps to Skip",
                     "Value": ":Label",
                   },
@@ -15278,7 +15316,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "ContinueObject": "Exit on failure",
               "FunctionId": 228,
               "FunctionObject": {
-                "Description": "Sets Maintenance mode for the selected computer.",
+                "Description": "Sets Maintenance mode for the selected computer and saves the maintenance mode record id to %maintenancemodeid%.",
                 "FunctionFlag": "Computer",
                 "FunctionId": 228,
                 "FunctionType": "Function",
@@ -15322,11 +15360,17 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                 "Name": "Maintenance Mode Clear",
                 "ParamNames": [
                   {
+                    "Description": "Selected Computer",
                     "ParamName": "ComputerID",
                     "Value": "@computerid@",
                   },
+                  {
+                    "Description": "Leave blank to clear all maintenance modes. Use a number or variable to indicate a specific record.",
+                    "ParamName": "Maintenance Mode Entry ID",
+                    "Value": "",
+                  },
                 ],
-                "Parameters": 1,
+                "Parameters": 2,
               },
               "Indentation": 0,
               "OsLimit": 0,

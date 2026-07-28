@@ -1310,14 +1310,14 @@ IF PATCH INSTALLED HotFixId 5c9e30a9-9015-44a4-9be9-94d6b8fac949 THEN Jump to :L
         
         
 ### IF Plugin Agent Command Available
-Checks if a Plugin is loaded and enabled for use.
+Checks if a Plugin Command is loaded and enabled for use.
 
 **Parameters**
 
 | Param | Values | Note |
 | --- | --- | --- |
-| Command ID | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
-| Label to Jump to or Steps to Skip | _User Provided_ | undefined |
+| Command ID | _User Provided_ | Plugin Command |
+| Label to Jump to or Steps to Skip | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
 
 **Example Function Text**
 ```        
@@ -1330,14 +1330,14 @@ IF SvcCommandId 1049 Agent Command Available THEN Jump to line :Label1315
         
         
 ### IF Plugin Enabled
-Checks to see if PlPlugin Name to Check.
+Checks to see if a Plugin is enabled.
 
 **Parameters**
 
 | Param | Values | Note |
 | --- | --- | --- |
-| GUID | Values loaded from database  | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
-| Label to Jump to or Steps to Skip | _User Provided_ | undefined |
+| GUID | Values loaded from database  | undefined |
+| Label to Jump to or Steps to Skip | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
 
 **Example Function Text**
 ```        
@@ -1356,8 +1356,8 @@ Checks if a Plugin Function Exists and is ready for use.
 
 | Param | Values | Note |
 | --- | --- | --- |
-| Function Guid | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
-| Label to Jump to or Steps to Skip | _User Provided_ | undefined |
+| Function | _User Provided_ | Plugin Server Function |
+| Label to Jump to or Steps to Skip | _User Provided_ | Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check. |
 
 **Example Function Text**
 ```        
@@ -2020,7 +2020,8 @@ Clears Maintenance mode for the selected computer.
 
 | Param | Values | Note |
 | --- | --- | --- |
-| ComputerID | _User Provided_ | undefined |
+| ComputerID | _User Provided_ | Selected Computer |
+| Maintenance Mode Entry ID | _User Provided_ | Leave blank to clear all maintenance modes. Use a number or variable to indicate a specific record. |
 
 **Example Function Text**
 ```        
@@ -2033,7 +2034,7 @@ Clear Maintenance Mode for @computerid@
         
         
 ### Maintenance Mode Start
-Sets Maintenance mode for the selected computer.
+Sets Maintenance mode for the selected computer and saves the maintenance mode record id to %maintenancemodeid%.
 
 **Parameters**
 
@@ -2386,7 +2387,7 @@ Executes an Agent Plugin Command and returns the results to %PluginCommandResult
 
 | Param | Values | Note |
 | --- | --- | --- |
-| Command ID | _User Provided_ | The Command to Execute |
+| Command | _User Provided_ | The Command to Execute |
 | Parameters | _User Provided_ | undefined |
 
 **Example Function Text**
@@ -3282,8 +3283,8 @@ Start a new script, all variables are passed to new script. If script fails then
 
 **Example Function Text**
 ```        
-Run Script: c7a65c93-eadc-11e1-bca6-7ec667b1402e in Minutes: @DELAY@
-Run Script: c7a65c93-eadc-11e1-bca6-7ec667b1402e
+Run Script: Add Reflexion Monitoring in Minutes: @DELAY@
+Run Script: Add Reflexion Monitoring
 ```
 
 
@@ -3787,10 +3788,11 @@ Send unencrypted data to a device that has an open SSH connection. The response 
 | --- | --- | --- |
 | SSH Session ID | _User Provided_ | Session ID of the open SSH connection. |
 | Text To Send | _User Provided_ | Text to send to the device. |
+| Line Ending | [Non-Unix, Unix]  | Line ending to use (Non-Unix = CRLF, Unix = LF). |
 
 **Example Function Text**
 ```        
-SSH Send: @TEXT@ unencrypted to SSH session ID: %sshsessionid%
+SSH send "@TEXT@" unencrypted to SSH session ID: %sshsessionid%
 ```
 
 
@@ -3807,10 +3809,11 @@ Send encrypted data to a device that has an open SSH connection. The response is
 | --- | --- | --- |
 | SSH Session ID | _User Provided_ | Session ID of the open SSH connection. |
 | Text To Send | _User Provided_ | Text to send to the device. |
+| Line Ending | [Non-Unix, Unix]  | Line ending to use (Non-Unix = CRLF, Unix = LF). |
 
 **Example Function Text**
 ```        
-SSH Send: @TEXT@ encrypted to SSH session ID: %sshsessionid%
+SSH send "@TEXT@" encrypted to SSH session ID: %sshsessionid%
 ```
 
 
@@ -3886,10 +3889,11 @@ Send unencrypted data to a device that has an open Telnet connection. The respon
 | --- | --- | --- |
 | Telnet Session ID | _User Provided_ | Session ID of the open Telnet connection. |
 | Text To Send | _User Provided_ | Text to send to the device. |
+| Line Ending | [Non-Unix, Unix]  | Line ending to use (Non-Unix = CRLF, Unix = LF). |
 
 **Example Function Text**
 ```        
-Telnet Send To: @TEXT@ unencrypted to Telnet session ID: %telnetsessionid%
+Telnet send "@TEXT@" unencrypted to Telnet session ID: %telnetsessionid%
 ```
 
 
@@ -3906,10 +3910,11 @@ Send encrypted data to a device that has an open Telnet connection. The response
 | --- | --- | --- |
 | Telnet Session ID | _User Provided_ | Session ID of the open Telnet connection. |
 | Text To Send | _User Provided_ | Text to send to the device. |
+| Line Ending | [Non-Unix, Unix]  | Line ending to use (Non-Unix = CRLF, Unix = LF). |
 
 **Example Function Text**
 ```        
-Telnet Send To: @TEXT@ encrypted to Telnet session ID: %telnetsessionid%
+Telnet send "@TEXT@" encrypted to Telnet session ID: %telnetsessionid%
 ```
 
 
