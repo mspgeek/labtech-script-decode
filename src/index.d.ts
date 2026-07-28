@@ -238,36 +238,6 @@ export function getFunctionLineDescription(step: ScriptStep): string
 export const functionTemplates: any
 
 /**
- * @param promise
- * @param promise.resolve
- * @param promise.reject
- * @param buffer
- * @returns {string}
- */
-export function zip(
-  promise: {
-    resolve: any
-    reject: any
-  },
-  buffer: any,
-): string
-
-/**
- * @param promise
- * @param promise.resolve
- * @param promise.reject
- * @param buffer
- * @returns {string}
- */
-export function unzip(
-  promise: {
-    resolve: any
-    reject: any
-  },
-  buffer: any,
-): string
-
-/**
  * @param {String|Number[]} encodedBuffer
  * @returns {Promise<LabTechScript>}
  */
@@ -370,3 +340,16 @@ export function interpolate(PackedScript: PackedScript): PackedScript
  * @returns {Promise<Array<String>>}
  */
 export function toText(input: LabTechScript | string): Promise<String[]>
+
+declare const labtechScript: {
+  constants: Constants
+  decode: typeof decode
+  decodeXML: typeof decodeXML
+  interpolate: typeof interpolate
+  encode: typeof encode
+  encodeXML: typeof encodeXML
+  functionTemplates: typeof functionTemplates
+  getFunctionLineDescription: typeof getFunctionLineDescription
+  toText: typeof toText
+}
+export default labtechScript
