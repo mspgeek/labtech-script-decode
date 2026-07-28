@@ -1777,7 +1777,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "Param4": 123,
               "Param5": "",
               "Sort": 17,
-              "StepDescription": "IF VARIABLENAME@ < @COMPAREVALUE@ THEN Jump to line 142",
+              "StepDescription": "IF @VARIABLENAME@ < @COMPAREVALUE@ THEN Jump to line 142",
             },
             {
               "Action": 2,

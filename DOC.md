@@ -4257,7 +4257,7 @@ Compares a variable to the specified data and skips if the result is TRUE.
 
 **Example Function Text**
 ```        
-IF VARIABLENAME@ < @COMPAREVALUE@ THEN Jump to line 142
+IF @VARIABLENAME@ < @COMPAREVALUE@ THEN Jump to line 142
 IF @VARIABLENAME@ = @COMPAREVAR@ THEN Jump to :Label
 IF @VARIABLENAME@ Contains @COMPAREVAR@ THEN Jump to :Label
 IF @VARIABLENAME@ Not Contains @COMPAREVAR@ THEN Jump to :Label

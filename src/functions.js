@@ -215,7 +215,8 @@ functionTemplates[70] = (p1, p2, p3, p4, _5, line) => {
   let temp = p1
   const compare = Functions[70].ParamNames[1].Values[p2]
   if (!('' + p1).includes('@') && !('' + p1).includes('%')) {
-    temp = `${p1}@`
+    // editor stores bare variable names, wrap both sides
+    temp = `@${p1}@`
   }
   if (p4 === '' || p4 === 0) {
     return `IF ${temp} ${compare} ${p3} THEN Exit Script`
