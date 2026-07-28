@@ -1,6 +1,6 @@
-import P from "xml2js";
-import C from "ajv";
-import S from "pako";
+import h from "xml2js";
+import $ from "ajv";
+import f from "pako";
 const E = {
   $id: "LabTech_Expansion",
   type: "object",
@@ -77,7 +77,7 @@ const E = {
       }
     }
   }
-}, k = {
+}, L = {
   $id: "LicenseDataObject",
   type: "object",
   properties: {
@@ -87,7 +87,7 @@ const E = {
     ScripVersion: { type: "string" },
     Type: { type: "string" }
   }
-}, L = {
+}, k = {
   $id: "ScriptDataObject",
   type: "object",
   properties: {
@@ -122,7 +122,7 @@ const E = {
     Param5: { type: "string" },
     Sort: { type: "string" }
   }
-}, O = {
+}, x = {
   $id: "ScriptFunction",
   type: "object",
   properties: {
@@ -139,17 +139,17 @@ const E = {
     },
     Parameters: { type: "string" }
   }
-}, x = [
+}, O = [
   w,
   v,
   E,
-  k,
   L,
+  k,
   R,
-  O,
+  x,
   A
-], V = new C({ schemas: x, strict: !1 }), N = V.getSchema("LabTech_Expansion");
-function U(e) {
+], U = new $({ schemas: O, strict: !1 }), N = U.getSchema("LabTech_Expansion");
+function V(e) {
   const t = ("" + e).replace(/\s+/g, ""), a = atob(t), i = new Uint8Array(a.length);
   for (let m = 0; m < a.length; m++)
     i[m] = a.charCodeAt(m);
@@ -163,7 +163,7 @@ function H(e) {
 }
 function M({ resolve: e, reject: t }, a) {
   try {
-    const i = S.gzip(new TextEncoder().encode(a), { level: -1, header: { os: 0 }, memLevel: 8 });
+    const i = f.gzip(new TextEncoder().encode(a), { level: -1, header: { os: 0 }, memLevel: 8 });
     return i[8] = 4, e(H(i));
   } catch (i) {
     return t(i);
@@ -171,7 +171,7 @@ function M({ resolve: e, reject: t }, a) {
 }
 function W({ resolve: e, reject: t }, a) {
   try {
-    const i = S.ungzip(a);
+    const i = f.ungzip(a);
     return e(new TextDecoder().decode(i));
   } catch (i) {
     return t(i);
@@ -208,7 +208,10 @@ const D = {
     26: "Windows 2012 Server R2",
     27: "Windows 10 Class (2016 or 10)",
     28: "Windows 10",
-    29: "Windows 2016 Server",
+    29: "Windows Server 2016",
+    30: "Windows Server 2019",
+    31: "Windows 11",
+    32: "Windows Server 2022",
     "-2147483648": "Function disabled",
     "-2147483647": "Function disabled - Windows 2000",
     "-2147483646": "Function disabled - Windows NT4",
@@ -238,7 +241,10 @@ const D = {
     "-2147483622": "Function disabled - Windows 2012 Server R2",
     "-2147483621": "Function disabled - Windows 10 Class (2016 or 10)",
     "-2147483620": "Function disabled - Windows 10",
-    "-2147483619": "Function disabled - Windows 2016 Server"
+    "-2147483619": "Function disabled - Windows Server 2016",
+    "-2147483618": "Function disabled - Windows Server 2019",
+    "-2147483617": "Function disabled - Windows 11",
+    "-2147483616": "Function disabled - Windows Server 2022"
   },
   Actions: {
     1: "InitialCheck",
@@ -3601,7 +3607,7 @@ const D = {
     174: {
       FunctionId: 174,
       Name: "Telnet Send Raw",
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -3611,6 +3617,11 @@ const D = {
         {
           Description: "Text to send to the device.",
           ParamName: "Text To Send"
+        },
+        {
+          Description: "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+          ParamName: "Line Ending",
+          Values: ["Non-Unix", "Unix"]
         }
       ],
       Description: "Send unencrypted data to a device that has an open Telnet connection. The response is stored in %telnetresult% and the success state in %telnetsuccess%.",
@@ -3619,7 +3630,7 @@ const D = {
     175: {
       FunctionId: 175,
       Name: "Telnet Send Secure",
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -3629,6 +3640,11 @@ const D = {
         {
           Description: "Text to send to the device.",
           ParamName: "Text To Send"
+        },
+        {
+          Description: "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+          ParamName: "Line Ending",
+          Values: ["Non-Unix", "Unix"]
         }
       ],
       Description: "Send encrypted data to a device that has an open Telnet connection. The response is stored in %telnetresult% and the success state in %telnetsuccess%.",
@@ -3681,7 +3697,7 @@ const D = {
     178: {
       FunctionId: 178,
       Name: "SSH Send Raw",
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -3691,6 +3707,11 @@ const D = {
         {
           Description: "Text to send to the device.",
           ParamName: "Text To Send"
+        },
+        {
+          Description: "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+          ParamName: "Line Ending",
+          Values: ["Non-Unix", "Unix"]
         }
       ],
       Description: "Send unencrypted data to a device that has an open SSH connection. The response is stored in %sshresult% and the success state in %sshsuccess%.",
@@ -3699,7 +3720,7 @@ const D = {
     179: {
       FunctionId: 179,
       Name: "SSH Send Secure",
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -3709,6 +3730,11 @@ const D = {
         {
           Description: "Text to send to the device.",
           ParamName: "Text To Send"
+        },
+        {
+          Description: "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+          ParamName: "Line Ending",
+          Values: ["Non-Unix", "Unix"]
         }
       ],
       Description: "Send encrypted data to a device that has an open SSH connection. The response is stored in %sshresult% and the success state in %sshsuccess%.",
@@ -4447,7 +4473,7 @@ const D = {
       ParamNames: [
         {
           Description: "The Command to Execute",
-          ParamName: "Command ID"
+          ParamName: "Command"
         },
         {
           ParamName: "Parameters"
@@ -4464,14 +4490,14 @@ const D = {
       ParamNames: [
         {
           ParamName: "GUID",
-          Values: ["Select CONVERT(CONCAT(Name,CHAR(0),GUID) using UTF8) From Plugins Order By Name"],
-          Description: "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check."
+          Values: ["Select CONVERT(CONCAT(Name,CHAR(0),GUID) using UTF8) From Plugins Order By Name"]
         },
         {
-          ParamName: "Label to Jump to or Steps to Skip"
+          ParamName: "Label to Jump to or Steps to Skip",
+          Description: "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check."
         }
       ],
-      Description: "Checks to see if PlPlugin Name to Check.",
+      Description: "Checks to see if a Plugin is enabled.",
       FunctionFlag: 1
     },
     226: {
@@ -4481,14 +4507,15 @@ const D = {
       FunctionType: 2,
       ParamNames: [
         {
-          Description: "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
+          Description: "Plugin Command",
           ParamName: "Command ID"
         },
         {
-          ParamName: "Label to Jump to or Steps to Skip"
+          ParamName: "Label to Jump to or Steps to Skip",
+          Description: "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check."
         }
       ],
-      Description: "Checks if a Plugin is loaded and enabled for use.",
+      Description: "Checks if a Plugin Command is loaded and enabled for use.",
       FunctionFlag: 1
     },
     227: {
@@ -4498,11 +4525,12 @@ const D = {
       FunctionType: 2,
       ParamNames: [
         {
-          Description: "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check.",
-          ParamName: "Function Guid"
+          Description: "Plugin Server Function",
+          ParamName: "Function"
         },
         {
-          ParamName: "Label to Jump to or Steps to Skip"
+          ParamName: "Label to Jump to or Steps to Skip",
+          Description: "Label to jump to or the number of steps to skip when the result is true, zero to exit script. Prefix with '!' to invert check."
         }
       ],
       Description: "Checks if a Plugin Function Exists and is ready for use.",
@@ -4523,17 +4551,22 @@ const D = {
           ParamName: "Duration"
         }
       ],
-      Description: "Sets Maintenance mode for the selected computer.",
+      Description: "Sets Maintenance mode for the selected computer and saves the maintenance mode record id to %maintenancemodeid%.",
       FunctionFlag: 2
     },
     229: {
       FunctionId: 229,
       Name: "Maintenance Mode Clear",
-      Parameters: 1,
+      Parameters: 2,
       FunctionType: 2,
       ParamNames: [
         {
+          Description: "Selected Computer",
           ParamName: "ComputerID"
+        },
+        {
+          Description: "Leave blank to clear all maintenance modes. Use a number or variable to indicate a specific record.",
+          ParamName: "Maintenance Mode Entry ID"
         }
       ],
       Description: "Clears Maintenance mode for the selected computer.",
@@ -4678,7 +4711,7 @@ const D = {
     },
     240: {
       FunctionId: 240,
-      Name: "Check Connnectivity",
+      Name: "Check Connectivity",
       Parameters: 0,
       FunctionType: 2,
       ParamNames: [],
@@ -4777,7 +4810,7 @@ const D = {
     245: {
       FunctionId: 245,
       Name: "SSH Send Raw",
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -4787,6 +4820,11 @@ const D = {
         {
           Description: "Text to send to the device.",
           ParamName: "Text To Send"
+        },
+        {
+          Description: "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+          ParamName: "Line Ending",
+          Values: ["Non-Unix", "Unix"]
         }
       ],
       Description: "Send unencrypted data to a device that has an open SSH connection. The response is stored in %sshresult% and the success state in %sshsuccess%.",
@@ -4795,7 +4833,7 @@ const D = {
     246: {
       FunctionId: 246,
       Name: "SSH Send Secure",
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -4805,6 +4843,11 @@ const D = {
         {
           Description: "Text to send to the device.",
           ParamName: "Text To Send"
+        },
+        {
+          Description: "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+          ParamName: "Line Ending",
+          Values: ["Non-Unix", "Unix"]
         }
       ],
       Description: "Send encrypted data to a device that has an open SSH connection. The response is stored in %sshresult% and the success state in %sshsuccess%.",
@@ -4845,7 +4888,7 @@ const D = {
     249: {
       FunctionId: 249,
       Name: "Telnet Send Raw",
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -4855,6 +4898,11 @@ const D = {
         {
           Description: "Text to send to the device.",
           ParamName: "Text To Send"
+        },
+        {
+          Description: "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+          ParamName: "Line Ending",
+          Values: ["Non-Unix", "Unix"]
         }
       ],
       Description: "Send unencrypted data to a device that has an open Telnet connection. The response is stored in %telnetresult% and the success state in %telnetsuccess%.",
@@ -4863,7 +4911,7 @@ const D = {
     250: {
       FunctionId: 250,
       Name: "Telnet Send Secure",
-      Parameters: 2,
+      Parameters: 3,
       FunctionType: 2,
       ParamNames: [
         {
@@ -4873,6 +4921,11 @@ const D = {
         {
           Description: "Text to send to the device.",
           ParamName: "Text To Send"
+        },
+        {
+          Description: "Line ending to use (Non-Unix = CRLF, Unix = LF).",
+          ParamName: "Line Ending",
+          Values: ["Non-Unix", "Unix"]
         }
       ],
       Description: "Send encrypted data to a device that has an open Telnet connection. The response is stored in %telnetresult% and the success state in %telnetsuccess%.",
@@ -5214,7 +5267,7 @@ const D = {
     314: "Clear Daytime Patching"
   }
 }, { Functions: p, RemoteCommands: G } = D;
-function f(e) {
+function T(e) {
   if (!r[e.FunctionId]) {
     const { FunctionType: t, Name: a } = e.FunctionObject;
     return `${t} ${a}`;
@@ -5332,7 +5385,7 @@ r[69] = (e, t) => e === 0 ? `Tool Install: AppID=${t}` : `Tool Remove: AppID=${t
 r[70] = (e, t, a, i, m, s) => {
   let o = e;
   const n = p[70].ParamNames[1].Values[t];
-  return !("" + e).includes("@") && !("" + e).includes("%") && (o = `${e}@`), i === "" || i === 0 ? `IF ${o} ${n} ${a} THEN Exit Script` : !Number.isInteger(i) && i !== "" ? `IF ${o} ${n} ${a} THEN Jump to ${i}` : `IF ${o} ${n} ${a} THEN Jump to line ${s + 1 + i}`;
+  return !("" + e).includes("@") && !("" + e).includes("%") && (o = `@${e}@`), i === "" || i === 0 ? `IF ${o} ${n} ${a} THEN Exit Script` : !Number.isInteger(i) && i !== "" ? `IF ${o} ${n} ${a} THEN Jump to ${i}` : `IF ${o} ${n} ${a} THEN Jump to line ${s + 1 + i}`;
 };
 r[72] = (e, t) => Number.isInteger(t) ? `Assign Ticket ${e} to user ${t}` : `Assign Ticket ${e} to ${t}`;
 r[73] = (e, t) => `Run on the Labtech Server: ${e} ${t}`;
@@ -5564,12 +5617,12 @@ r[171] = (e, t, a, i, m) => {
 };
 r[172] = (e) => `SET: %sqlresult% = [${e}]`;
 r[173] = (e, t, a) => `Open Telnet To: "${e}", Port: ${t}, Timeout: ${a}`;
-r[174] = (e, t) => `Telnet Send To: ${t} unencrypted to Telnet session ID: ${e}`;
-r[175] = (e, t) => `Telnet Send To: ${t} encrypted to Telnet session ID: ${e}`;
+r[174] = (e, t) => `Telnet send "${t}" unencrypted to Telnet session ID: ${e}`;
+r[175] = (e, t) => `Telnet send "${t}" encrypted to Telnet session ID: ${e}`;
 r[176] = (e) => `Close Telnet session ID: ${e}`;
 r[177] = (e, t, a) => `Open SSH To: "${e}", Port: ${t}, Timeout: ${a}`;
-r[178] = (e, t) => `SSH Send: ${t} unencrypted to SSH session ID: ${e}`;
-r[179] = (e, t) => `SSH Send: ${t} encrypted to SSH session ID: ${e}`;
+r[178] = (e, t) => `SSH send "${t}" unencrypted to SSH session ID: ${e}`;
+r[179] = (e, t) => `SSH send "${t}" encrypted to SSH session ID: ${e}`;
 r[180] = (e) => `Close SSH Session ID: ${e}`;
 r[181] = (e, t) => `LabTech Server Shell Execute: ${e} ${t}`;
 r[182] = (e, t) => `Download: ${e} to LabTech Server, save as ${t}`;
@@ -5665,24 +5718,24 @@ r[241] = (e, t) => `Get SNMP OID: ${e} and storing it in ${t}`;
 r[242] = (e, t, a) => `SET: SNMP OID: ${e} to ${a}`;
 r[243] = (e, t) => `Open SSH to network device on Port: ${e}, Timeout: ${t}`;
 r[244] = (e) => `Close SSH session ID: ${e}`;
-r[245] = (e, t) => `SSH send: "${t}" unencrypted to SSH session id: ${e}`;
-r[246] = (e, t) => `SSH send: "${t}" encrypted to SSH session id: ${e}`;
+r[245] = (e, t) => `SSH send "${t}" unencrypted to SSH session ID: ${e}`;
+r[246] = (e, t) => `SSH send "${t}" encrypted to SSH session ID: ${e}`;
 r[247] = (e, t) => `Open Telnet to network device on Port: ${e}, Timeout: ${t}`;
 r[248] = (e) => `Close Telnet session ID: ${e}`;
-r[249] = (e, t) => `Telnet Send: "${t}" unencrypted to SSH session id: ${e}`;
-r[250] = (e, t) => `Telnet Send: "${t}" encrypted to SSH session id: ${e}`;
+r[249] = (e, t) => `Telnet send "${t}" unencrypted to Telnet session ID: ${e}`;
+r[250] = (e, t) => `Telnet send "${t}" encrypted to Telnet session ID: ${e}`;
 r[251] = (e) => `FOR each computer associated with Contact run script ScriptId ${e}`;
 r[252] = (e, t, a, i) => Number.isInteger(e) && Number.isInteger(t) ? `Create New Ticket: for ClientId ${e}\\NetworkDeviceId ${t} Email: ${a} Subject: ${i}` : Number.isInteger(e) ? `Create New Ticket: for ClientId ${e}\\${t} Email: ${a} Subject: ${i}` : Number.isInteger(t) ? `Create New Ticket: for ${e}\\NetworkDeviceId ${t} Email: ${a} Subject: ${i}` : `Create New Ticket: for ${e}\\${t} Email: ${a} Subject: ${i}`;
 r[257] = (e) => e === 1 ? "Script Resume State: Resume from this step" : e === 2 ? "Script Resume State: Resume from last executed script step" : "Script Resume State: Resume disabled";
 r[258] = (e) => `${e} - Label`;
 r[259] = () => "Exit Script";
-const g = P.parseString, { Actions: B, OsLimits: j, Continues: _, FunctionFlags: J, FunctionTypes: q, Functions: T } = D;
+const g = h.parseString, { Actions: B, OsLimits: j, Continues: _, FunctionFlags: J, FunctionTypes: q, Functions: S } = D;
 function I(e) {
   return isNaN(e) || (e % 1 === 0 ? e = e.includes("0x") ? e : parseInt(e, 10) : e = parseFloat(e)), e;
 }
 function F(e) {
   return new Promise((t, a) => {
-    const i = Array.isArray(e) ? Uint8Array.from(e) : U(e);
+    const i = Array.isArray(e) ? Uint8Array.from(e) : V(e);
     return W({ resolve: t, reject: a }, i);
   }).then(
     (t) => new Promise((a, i) => {
@@ -5697,9 +5750,9 @@ function F(e) {
     })
   );
 }
-function h(e, t = {}, a = !1) {
+function P(e, t = {}, a = !1) {
   return new Promise((i, m) => {
-    let o = new P.Builder(t).buildObject(e);
+    let o = new h.Builder(t).buildObject(e);
     return a && (o = o.replace(/<((?!.+ \/>)[^/>]+)\/>/g, "<$1 />"), o += `\r
 `), M({ resolve: i, reject: m }, o);
   });
@@ -5715,10 +5768,10 @@ function z({ promiseResult: e, result: t, PackedScript: a }) {
 }
 function Q(e) {
   return new Promise((t, a) => N(e) ? t(e) : a(N.errors)).then((t) => {
-    const a = t.$, i = new P.Builder({ rootName: "LabTech_Expansion", xmldec: a, headless: !0 });
+    const a = t.$, i = new h.Builder({ rootName: "LabTech_Expansion", xmldec: a, headless: !0 });
     return d({
       PackedScript: t,
-      handler: Y,
+      handler: K,
       promiseHandler: b
     }).then((m) => i.buildObject(m)).then((m) => m.replace(/<([^/>]+)\/>/g, "<$1></$1>"));
   });
@@ -5738,27 +5791,48 @@ function y(e) {
       throw new Error("Could not parse XML.");
     return d({
       PackedScript: t.LabTech_Expansion,
-      handler: K,
+      handler: X,
       promiseHandler: b
     });
-  }).then((t) => {
+  }).then((t) => Y(t)).then((t) => {
     if (N(t))
       return t;
     throw N.errors;
   });
+}
+function Y(e) {
+  const t = [];
+  function a(m) {
+    if (m) {
+      if (Array.isArray(m)) {
+        m.forEach(a);
+        return;
+      }
+      m.PackedScript && a(m.PackedScript), m.NewDataSet && t.push(m.NewDataSet.Table);
+    }
+  }
+  a(e.PackedScript);
+  const i = {};
+  return t.forEach((m) => {
+    i[m.ScriptGuid] = m.ScriptName;
+  }), t.forEach((m) => {
+    m.ScriptData.ScriptSteps.forEach((s) => {
+      s.FunctionId === 17 && i[s.Param1] && (s.StepDescription = T(Object.assign({}, s, { Param1: i[s.Param1] })));
+    });
+  }), e;
 }
 function d({ PackedScript: e, handler: t, promiseHandler: a, promises: i, result: m }) {
   return i || (i = []), Array.isArray(e) && e.forEach((s) => d({ PackedScript: s, handler: t, promiseHandler: a, promises: i, result: m })), Array.isArray(e && e.PackedScript) && e.PackedScript.forEach(
     (s) => d({ PackedScript: s, handler: t, promiseHandler: a, promises: i, result: m })
   ), e.PackedScript && !Array.isArray(e.PackedScript) && i.push(d({ PackedScript: e.PackedScript, handler: t, promiseHandler: a, result: m })), e.NewDataSet && i.push(t(e)), Promise.all(i).then((s) => a({ promiseResult: s, result: m, PackedScript: e }));
 }
-function Y(e) {
+function K(e) {
   return Promise.resolve(e).then((t) => {
     const { ScriptData: a, LicenseData: i } = t.NewDataSet.Table;
     return a.ScriptSteps.forEach((m) => {
       delete m.ActionObject, delete m.ContinueObject, delete m.FunctionObject, delete m.StepDescription, delete m.OsLimitObject;
     }), Promise.all([
-      h(
+      P(
         a,
         {
           rootName: "ScriptData",
@@ -5768,7 +5842,7 @@ function Y(e) {
         },
         !0
       ),
-      h(
+      P(
         i,
         {
           rootName: "LicenseData",
@@ -5781,36 +5855,36 @@ function Y(e) {
     ]).then(([m, s]) => (t.NewDataSet.Table.ScriptData = m, t.NewDataSet.Table.LicenseData = s, t));
   });
 }
-function K(e) {
+function X(e) {
   return Promise.resolve(e).then((t) => {
     const { ScriptData: a, LicenseData: i } = t.NewDataSet.Table;
-    return Promise.all([F(a), F(i), Promise.resolve(t)]).then(([m, s, o]) => (o.NewDataSet.Table.ScriptData = m.ScriptData, o.NewDataSet.Table.LicenseData = s.LicenseData, o = X(o), o = Z(o), o = ee(o), o = $(o), o)).catch((m) => {
+    return Promise.all([F(a), F(i), Promise.resolve(t)]).then(([m, s, o]) => (o.NewDataSet.Table.ScriptData = m.ScriptData, o.NewDataSet.Table.LicenseData = s.LicenseData, o = Z(o), o = ee(o), o = te(o), o = C(o), o)).catch((m) => {
       console.log(m);
     });
   });
 }
-function X(e) {
+function Z(e) {
   return Array.isArray(e.ScriptFolder) || (e.ScriptFolder = [e.ScriptFolder]), e;
 }
-function Z(e) {
+function ee(e) {
   const t = e.NewDataSet.Table.ScriptData.ScriptSteps;
   return Array.isArray(t) || (e.NewDataSet.Table.ScriptData.ScriptSteps = [t]), e;
 }
-function ee(e) {
+function te(e) {
   return e.NewDataSet.Table.ScriptData.ScriptSteps.sort((a, i) => a.Action === "InitialCheck" ? -1 : i.Action === "InitialCheck" ? 1 : a.Sort - i.Sort), e;
 }
-function $(e) {
+function C(e) {
   return e.NewDataSet.Table.ScriptData.ScriptSteps.forEach((a) => {
-    const i = [a.Param1, a.Param2, a.Param3, a.Param4, a.Param5], { FunctionFlag: m, FunctionType: s } = T[a.FunctionId], o = Object.assign({}, T[a.FunctionId], {
+    const i = [a.Param1, a.Param2, a.Param3, a.Param4, a.Param5], { FunctionFlag: m, FunctionType: s } = S[a.FunctionId], o = Object.assign({}, S[a.FunctionId], {
       FunctionFlag: J[m],
       FunctionType: q[s]
     });
     o.ParamNames.forEach((n, c) => {
       n.Value = i[c];
-    }), a.ActionObject = B[a.Action], a.ContinueObject = _[a.Continue], a.FunctionObject = o, a.OsLimitObject = j[a.OsLimit], a.StepDescription = f(a);
+    }), a.ActionObject = B[a.Action], a.ContinueObject = _[a.Continue], a.FunctionObject = o, a.OsLimitObject = j[a.OsLimit], a.StepDescription = T(a);
   }), e;
 }
-function te(e) {
+function ae(e) {
   function t(a) {
     return `${" ".repeat(a.Indentation)}${a.StepDescription.replace(/\r/g, "\\\\r").replace(/\n/g, "\\\\n")}\r
 `;
@@ -5822,37 +5896,37 @@ function te(e) {
     }), s;
   });
 }
-function ae(e) {
+function re(e) {
   return new Promise((t, a) => typeof e == "string" ? y(e).then((i) => t(i)) : t(e)).then(
     (t) => d({
       PackedScript: t.PackedScript,
-      handler: te,
+      handler: ae,
       result: [],
       promiseHandler: z
     })
   );
 }
-const oe = {
+const se = {
   constants: D,
   decode: F,
   decodeXML: y,
-  interpolate: $,
-  encode: h,
+  interpolate: C,
+  encode: P,
   encodeXML: Q,
   functionTemplates: r,
-  getFunctionLineDescription: f,
-  toText: ae
+  getFunctionLineDescription: T,
+  toText: re
 };
 export {
   D as constants,
   F as decode,
   y as decodeXML,
-  oe as default,
-  h as encode,
+  se as default,
+  P as encode,
   Q as encodeXML,
   r as functionTemplates,
-  f as getFunctionLineDescription,
-  $ as interpolate,
-  ae as toText
+  T as getFunctionLineDescription,
+  C as interpolate,
+  re as toText
 };
 //# sourceMappingURL=labtech-script-decode.js.map
