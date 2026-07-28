@@ -135,14 +135,17 @@
 [Resend Software](#resend-software)  
 [Resend System Information](#resend-system-information)  
 [Script Call](#script-call)  
+[Script Exit](#script-exit)  
 [Script Exit with Error](#script-exit-with-error)  
 [Script For Each](#script-for-each)  
 [Script For Each SQL](#script-for-each-sql)  
 [Script Goto](#script-goto)  
+[Script Label](#script-label)  
 [Script Log Message](#script-log-message)  
 [Script Math](#script-math)  
 [Script Note](#script-note)  
 [Script RegEx](#script-regex)  
+[Script Resume State](#script-resume-state)  
 [Script Return](#script-return)  
 [Script Run](#script-run)  
 [Script Sleep](#script-sleep)  
@@ -3010,6 +3013,25 @@ Call: :Label
 ---
         
         
+### Script Exit
+Exits the script with a success result.
+
+**Parameters**
+
+| Param | Values | Note |
+| --- | --- | --- |
+
+
+**Example Function Text**
+```        
+Exit Script
+```
+
+
+
+---
+        
+        
 ### Script Exit with Error
 Exits the script and sets the failure status in the logs, All normal script exits and ends exit with success status.
 
@@ -3093,6 +3115,25 @@ GOTO: :Label
 ---
         
         
+### Script Label
+Creates a label used as a script flow target.
+
+**Parameters**
+
+| Param | Values | Note |
+| --- | --- | --- |
+| Label Name | _User Provided_ | The name of the label. |
+
+**Example Function Text**
+```        
+:NewScriptLabelFunction - Label
+```
+
+
+
+---
+        
+        
 ### Script Log Message
 Writes an informational entry to the script log.
 
@@ -3156,6 +3197,11 @@ Adds a remark to the script and will not be executed.
 ```        
 Note: NOTE TEXT @NOTETEXT@
 :CustomLabel - Label
+Note: New Script Label Function
+Note: New Script Exit Function
+Note: Set Script Resume State to Disabled
+Note: Set Script Resume State to this step
+Note: Set Script Resume State to last successful script step
 ```
 
 
@@ -3177,6 +3223,27 @@ Performs regular expression parsing for the given value and stores the result in
 **Example Function Text**
 ```        
 SET: @RESULTSVAR@ = MATCH(@VALUE@ PATTERN @PATTERN@)
+```
+
+
+
+---
+        
+        
+### Script Resume State
+Set Script Resume State or Disable Resume if the script engine is restarted.
+
+**Parameters**
+
+| Param | Values | Note |
+| --- | --- | --- |
+| Resume State | _User Provided_ | Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last successful script step. |
+
+**Example Function Text**
+```        
+Script Resume State: Resume disabled
+Script Resume State: Resume from this step
+Script Resume State: Resume from last successful script step
 ```
 
 
