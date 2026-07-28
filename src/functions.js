@@ -863,7 +863,7 @@ functionTemplates[257] = (p1) => {
     return 'Script Resume State: Resume from this step'
   }
   if (p1 === 2) {
-    return 'Script Resume State: Resume from last successful script step'
+    return 'Script Resume State: Resume from last executed script step'
   }
   return 'Script Resume State: Resume disabled'
 }

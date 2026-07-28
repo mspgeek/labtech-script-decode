@@ -349,7 +349,7 @@ exports[`Script Function Demonstration.xml (Automate 250.436) > decodes with the
                 "Name": "Script Resume State",
                 "ParamNames": [
                   {
-                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last successful script step.",
+                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last executed script step.",
                     "ParamName": "Resume State",
                     "Value": 2,
                   },
@@ -413,7 +413,7 @@ exports[`Script Function Demonstration.xml (Automate 250.436) > decodes with the
                 "Name": "Script Resume State",
                 "ParamNames": [
                   {
-                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last successful script step.",
+                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last executed script step.",
                     "ParamName": "Resume State",
                     "Value": 2,
                   },
@@ -477,7 +477,7 @@ exports[`Script Function Demonstration.xml (Automate 250.436) > decodes with the
                 "Name": "Script Resume State",
                 "ParamNames": [
                   {
-                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last successful script step.",
+                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last executed script step.",
                     "ParamName": "Resume State",
                     "Value": 2,
                   },
@@ -493,7 +493,7 @@ exports[`Script Function Demonstration.xml (Automate 250.436) > decodes with the
               "Param4": "",
               "Param5": "",
               "Sort": 13,
-              "StepDescription": "Script Resume State: Resume from last successful script step",
+              "StepDescription": "Script Resume State: Resume from last executed script step",
             },
             {
               "Action": 2,
@@ -16187,7 +16187,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                 "Name": "Script Resume State",
                 "ParamNames": [
                   {
-                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last successful script step.",
+                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last executed script step.",
                     "ParamName": "Resume State",
                     "Value": 2,
                   },
@@ -16251,7 +16251,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                 "Name": "Script Resume State",
                 "ParamNames": [
                   {
-                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last successful script step.",
+                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last executed script step.",
                     "ParamName": "Resume State",
                     "Value": 2,
                   },
@@ -16315,7 +16315,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
                 "Name": "Script Resume State",
                 "ParamNames": [
                   {
-                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last successful script step.",
+                    "Description": "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last executed script step.",
                     "ParamName": "Resume State",
                     "Value": 2,
                   },
@@ -16331,7 +16331,7 @@ exports[`decodeXML > decodes a multi-script bundle 1`] = `
               "Param4": "",
               "Param5": "",
               "Sort": 340,
-              "StepDescription": "Script Resume State: Resume from last successful script step",
+              "StepDescription": "Script Resume State: Resume from last executed script step",
             },
           ],
           "Scripts": {

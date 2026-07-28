@@ -5015,7 +5015,7 @@ const D = {
       FunctionType: 2,
       ParamNames: [
         {
-          Description: "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last successful script step.",
+          Description: "Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last executed script step.",
           ParamName: "Resume State"
         }
       ],
@@ -5673,7 +5673,7 @@ r[249] = (e, t) => `Telnet Send: "${t}" unencrypted to SSH session id: ${e}`;
 r[250] = (e, t) => `Telnet Send: "${t}" encrypted to SSH session id: ${e}`;
 r[251] = (e) => `FOR each computer associated with Contact run script ScriptId ${e}`;
 r[252] = (e, t, a, i) => Number.isInteger(e) && Number.isInteger(t) ? `Create New Ticket: for ClientId ${e}\\NetworkDeviceId ${t} Email: ${a} Subject: ${i}` : Number.isInteger(e) ? `Create New Ticket: for ClientId ${e}\\${t} Email: ${a} Subject: ${i}` : Number.isInteger(t) ? `Create New Ticket: for ${e}\\NetworkDeviceId ${t} Email: ${a} Subject: ${i}` : `Create New Ticket: for ${e}\\${t} Email: ${a} Subject: ${i}`;
-r[257] = (e) => e === 1 ? "Script Resume State: Resume from this step" : e === 2 ? "Script Resume State: Resume from last successful script step" : "Script Resume State: Resume disabled";
+r[257] = (e) => e === 1 ? "Script Resume State: Resume from this step" : e === 2 ? "Script Resume State: Resume from last executed script step" : "Script Resume State: Resume disabled";
 r[258] = (e) => `${e} - Label`;
 r[259] = () => "Exit Script";
 const g = P.parseString, { Actions: B, OsLimits: j, Continues: _, FunctionFlags: J, FunctionTypes: q, Functions: T } = D;

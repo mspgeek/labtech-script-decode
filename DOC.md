@@ -3237,13 +3237,13 @@ Set Script Resume State or Disable Resume if the script engine is restarted.
 
 | Param | Values | Note |
 | --- | --- | --- |
-| Resume State | _User Provided_ | Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last successful script step. |
+| Resume State | _User Provided_ | Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last executed script step. |
 
 **Example Function Text**
 ```        
 Script Resume State: Resume disabled
 Script Resume State: Resume from this step
-Script Resume State: Resume from last successful script step
+Script Resume State: Resume from last executed script step
 ```
 
 

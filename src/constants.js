@@ -4931,7 +4931,7 @@ const constants = {
       ParamNames: [
         {
           Description:
-            'Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last successful script step.',
+            'Sets the resume state. 0=Resume disabled, 1=Resume from this step, 2=Resume from last executed script step.',
           ParamName: 'Resume State',
         },
       ],

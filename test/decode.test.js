@@ -56,7 +56,7 @@ describe('Script Function Demonstration.xml (Automate 250.436)', () => {
     expect(text).toContain('Exit Script')
     expect(text).toContain('Script Resume State: Resume disabled')
     expect(text).toContain('Script Resume State: Resume from this step')
-    expect(text).toContain('Script Resume State: Resume from last successful script step')
+    expect(text).toContain('Script Resume State: Resume from last executed script step')
   })
 
   it('round-trips stably', async () => {

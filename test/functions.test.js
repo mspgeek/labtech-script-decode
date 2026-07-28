@@ -65,7 +65,7 @@ describe('function definitions 257-259', () => {
       makeStep(258, { Param1: ':Cleanup', Sort: 1 }),
       makeStep(259, { Sort: 2 }),
     ])
-    expect(resume.StepDescription).toBe('Script Resume State: Resume from last successful script step')
+    expect(resume.StepDescription).toBe('Script Resume State: Resume from last executed script step')
     expect(label.StepDescription).toBe(':Cleanup - Label')
     expect(exit.StepDescription).toBe('Exit Script')
   })
